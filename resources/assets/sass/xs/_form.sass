@@ -1,0 +1,56 @@
+@import '../variables'
+
+form.cee,
+div.cee
+  input,
+  select,
+  textarea
+    border: 1px solid $col_grey
+    border-radius: 0
+
+    &:focus
+      border-color: $col_primary
+      box-shadow: none
+
+    &.color
+      height: 50px
+
+  label
+    font-family: $font_primary
+
+  .addon-secondary
+    background-color: $col_grey2
+    border: 1px solid $col_grey
+    border-radius: 0
+    color: $col_grey
+
+  .custom-radio,
+  .custom-checkbox
+    .custom-control-label::before
+      background-color: $col_grey2
+
+    .custom-control-input:checked~.custom-control-label::before
+      background-color: $col_primary
+      border: none
+
+  .input-group
+    background-color: #ffffff
+
+    &.date
+      .btn-secondary
+        padding: 10px
+
+    &.file
+      border: 1px solid $col_grey
+
+      input
+        opacity: 0
+
+    label
+      margin-bottom: 0
+
+      &:hover
+        cursor: pointer
+
+      img
+        margin: 5px

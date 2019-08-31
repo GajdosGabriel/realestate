@@ -1,0 +1,89 @@
+@import '../variables'
+
+.btn
+  border-radius: 0
+
+  &:disabled
+    background-color: $col_grey
+    border: 2px solid $col_grey
+    opacity: 0.5
+    cursor: pointer
+
+    &:hover
+      background-color: $col_grey
+      color: #ffffff
+      border: 2px solid $col_grey
+      opacity: 0.5
+
+.btn-link
+  color: $col_grey
+
+  &:hover
+    color: $col_primary
+
+// Buttons
+@each $btn in $btns
+  .btn-#{$btn}
+    border: 2px solid transparent
+    border-radius: 0
+    letter-spacing: 2px
+    font:
+      family: $font_primary
+      weight: bold
+    text-transform: uppercase
+
+    &:hover
+      background-color: transparent
+
+    &.disabled
+      background-color: $col_grey2
+      border-color: $col_grey2
+
+.btn-danger
+  &:hover
+    color: $col_red
+
+.btn-primary
+  background-color: $col_primary
+  color: #ffffff
+
+  &:hover
+    border: 2px solid $col_primary
+    color: $col_primary
+
+.btn-secondary
+  background-color: $col_grey
+  color: #ffffff
+
+  &:hover
+    border: 2px solid $col_grey
+    color: $col_grey
+
+.btn-hot
+  background-color: $col_hot
+  color: #ffffff
+
+  &:hover
+    border: 2px solid $col_hot
+    color: $col_hot
+
+.btn-success
+  &:hover
+    color: $col_green
+
+.btn-blue
+  background-color: $col_tdo
+  color: #ffffff
+
+  &:hover
+    background-color: transparent
+    color: $col_tdo
+    border: 2px solid $col_tdo
+
+.btn-warning
+  &:hover
+    color: $col_hot
+
+.btn-xs
+  padding: 2px 6px
+  font-size: 10px

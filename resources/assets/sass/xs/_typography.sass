@@ -1,0 +1,40 @@
+@import '../variables'
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat|PT+Serif')
+
+a
+  color: $col_primary
+
+  &:hover
+    color: darken($col_primary, 20%)
+
+// Colors
+@each $name, $color in $colors
+  .color_#{$name}
+    color: $color
+
+.color_white
+  color: #ffffff
+
+.font-montserrat
+  font-family: $font_primary
+
+.font-pt-serif
+  font-family: $font_secondary
+
+// Headers
+@for $i from 1 through 6
+  h#{$i}
+    font-family: $font_primary
+
+.header-lg
+  font-size: 36px
+
+.header-md
+  font-size: 30px
+
+.header-sm
+  font-size: 14px
+
+.text-shadow
+  text-shadow: $text_shadow

@@ -1,0 +1,77 @@
+@import '../variables'
+
+// Public & Member area navigation
+.generalNavbar
+  .navbar-brand
+    img
+      height: 70px
+      margin: 6px 0
+
+  .navbar-collapse
+    background-color: transparent
+    margin: 0
+    padding: 0
+
+    .dropdown-menu
+      background-color: $col_tertiary
+      border-radius: 0
+      left: auto
+      right: 0
+
+      .dropdown-item
+        padding: 8px 10px
+
+    .nav-item
+      a
+        padding: 10px 8px
+
+// Public area navigation
+#infobar
+  background-color: $col_secondary
+  padding: 8px 16px
+
+  p
+    color: $col_grey
+    font:
+      family: $font_secondary
+      size: 14px
+    margin: 0
+
+    &.socials
+      a
+        color: $col_grey
+        font-size: 14px
+        padding-left: 4px
+
+        &:hover
+          color: $col_primary
+
+#publicNav
+  .nav-link.login
+    margin-right: 5px
+
+// Member area navigation
+#memberNavbar
+  #memberNav
+    .nav-item
+      a
+        color: #ffffff
+
+        &.active,
+        &:hover
+          color: $col_grey
+
+        &.action
+          background-color: $col_primary
+          color: #ffffff
+
+          &:hover
+            border: 2px solid $col_primary
+            color: $col_primary
+
+    .dropdown-menu
+      .dropdown-item
+        color: $col_grey
+
+        &:hover
+          background-color: $col_primary

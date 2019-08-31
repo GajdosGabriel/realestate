@@ -1,0 +1,230 @@
+@import 'variables'
+@import 'xs/article'
+@import 'xs/button'
+@import 'xs/carousel'
+@import 'xs/cookieConsent'
+@import 'xs/flash'
+@import 'xs/footer'
+@import 'xs/form'
+@import 'xs/modal'
+@import 'xs/nav'
+@import 'xs/projects'
+@import 'xs/table'
+@import 'xs/typography'
+
+#adminPanel
+  .float-right
+    .item
+      padding-left: 20px
+      padding-right: 0
+
+  .item
+    display: inline-block
+    padding-right: 20px
+
+    .text
+      font-size: 20px
+
+address
+  border-left: 2px solid $col_primary
+  padding-left: 20px
+  font-style: italic
+
+#banksBlock
+  background:
+    image: url('../images/pub/banks.jpg')
+    size: cover
+    position: center center
+  border-top: 6px solid $col_primary
+  color: #ffffff
+  padding: 50px 0
+
+  h2
+    font-size: 24px
+    background-color: rgba(#000000, 0.5)
+
+.bgAlternate
+  > div:nth-of-type(odd)
+    background-color: $col_secondary
+
+  > div:nth-of-type(even)
+    background-color: $col_tertiary
+
+// Backgrounds
+@each $name, $col in $bgs
+  .bg_#{$name}
+    background-color: $col
+
+body
+  color: $col_grey
+  font-family: $font_secondary
+
+  &.member
+    background-color: $col_tertiary
+
+  &.admin
+    background-color: $col_tertiary
+    font-family: $font_primary
+
+.card
+  border-radius: 0
+
+.columns-4
+  columns: 4
+
+.content
+  &.opacity
+    opacity: 0.2
+
+.gdpr
+  font-size: 12px
+
+hr
+  margin: 20px auto
+
+  &.part
+    width: 33.3%
+
+  &.primary
+    border-top: 2px solid $col_primary
+
+.img-thumbnail
+  border-radius: 0
+
+#impersonating
+  background-color: #ffffff
+  border: 2px solid $col_primary
+  padding: 10px
+  position: fixed
+  bottom: 20px
+  left: 20px
+  z-index: 1000
+
+.list-group.users
+  font-family: $font_primary
+
+  li
+    border-radius: 0
+
+    &:nth-of-type(even)
+      background-color: $col_tertiary
+
+    a:hover
+      text-decoration: none
+
+    // Borders
+    @each $name, $col in $statuses
+      &.#{$name}
+        border-left: 6px solid $col
+        padding-left: 14px
+
+#memberIndex
+  .block
+    padding: 20px
+    min-height: 280px
+
+    >.btn
+      position: absolute
+      bottom: 20px
+      left: 35px
+
+    .moreButtons
+      position: absolute
+      bottom: 20px
+      left: 35px
+
+  #video
+    background:
+      image: url('../images/member/boats.jpg')
+      size: cover
+      position: center center
+
+  #sirava
+    background:
+      image: url('../images/member/hot/flldp/sirava_area_sm.jpg')
+      position: right center
+      size: cover
+
+.pageBlock
+  padding-top: 50px
+
+.pagination
+  margin-bottom: 0
+
+  .page-item
+    &.active
+      span
+        background-color: $col_primary
+        border-color: $col_primary
+        color: #ffffff
+
+    .page-link
+      color: $col_primary
+
+.pagination-center
+  .pagination
+    justify-content: center
+
+.pagination-right
+  .pagination
+    justify-content: flex-end
+
+.popover-info
+  cursor: pointer
+  color: $col_grey
+  font-size: 18px
+  vertical-align: middle
+
+  &:hover
+    color: $col_primary
+
+pre
+  background-color: $col_secondary
+  border-bottom: 1px solid $col_primary
+  padding: 15px 15px 10px 15px
+
+.progress
+  border-radius: 0
+
+#remindersBlock
+  position: fixed
+  bottom: 20px
+  border: 5px solid $col_grey
+  left: 20px
+  min-width: 450px
+  max-width: 600px
+  background-color: $col_secondary
+  padding: 10px
+  z-index: 1000
+
+  .list-group-item
+    padding: 10px
+
+#step1Tablist
+  .nav-link
+    color: $col_grey
+    font-family: $font_primary
+    font-size: 20px
+    font-weight: bold
+    padding: 10px
+
+    &.active
+      background-color: $col-secondary
+      border-bottom: 1px solid $col_secondary !important
+      border-color: rgba(0, 0, 0, 0.125)
+      color: $col_primary
+      border-radius: 0
+
+    &.disabled
+      opacity: 0.5
+
+#step1TabContent
+  background-color: $col-secondary
+  border: 1px solid rgba(0, 0, 0, 0.125)
+  border-top: none
+  border-radius: 0
+  padding: 20px
+
+ul,
+ol
+  padding-left: 20px
