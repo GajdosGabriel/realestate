@@ -13,7 +13,6 @@ use App\PRSerial;
 
 class AdminController extends Controller {
     public function index() {
-
         // Total users
         $intTotalUsers = User::count();
 

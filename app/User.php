@@ -146,4 +146,16 @@ class User extends Authenticatable {
     public function pep() {
         return $this->hasOne(Pep::class);
     }
+
+//    Skúška ignorovaný user
+//    public static function ignoredUser(){
+//        $users = User::role(['agent', 'admin', 'super admin'])->get();
+//
+//       foreach($users as $user) {
+//          $xx[] = $user->id;
+//       }
+//        return $xx;
+//    }
+
+
 }

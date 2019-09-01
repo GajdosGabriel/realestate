@@ -206,7 +206,7 @@ class UserController extends Controller {
 
     public function roles($id) {
         $objUser = User::findOrFail($id);
-        $arrRoles = Role::orderBy('name')->get();
+        $arrRoles = Role::whereNotIn('id', [41])->orderBy('name')->get();
 
         return view('admin/users/roles')->with([
             'objUser' => $objUser,
