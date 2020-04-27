@@ -12,7 +12,7 @@ class APIValidator {
             'full_name' => 'string|max:80',
             'email' => 'required|email|unique:users|max:70',
             'phone_code' => 'string|max:4',
-            'phone' => 'required|string|max:20',
+            'phone' => 'required|string|max:130',
             'country' => 'string',
             'referral_id' => 'int|min:1|exists:users,id'
         ]);

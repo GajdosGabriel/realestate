@@ -44,7 +44,7 @@
         <div id="infobar" class="d-none d-lg-block">
             <div class="row">
                 <div class="col-8">
-                    <p>@lang('public/nav.call'): <span class="font-weight-bold color_primary">+421 233 056 141</span></p>
+                    <p>@lang('public/nav.call'): <span class="font-weight-bold color_primary">+421 915 36 46 22</span></p>
                 </div>
 
                 <div class="col-4 text-right">
@@ -79,14 +79,14 @@
 
                     <li class="nav-item"><a class="nav-link" href="#aboutBlock">@lang('public/nav.aboutUs')</a></li>
 
-                    <li class="nav-item"><a class="nav-link" href="#newsBlock">@lang('public/nav.news')</a></li>
+{{--                    <li class="nav-item"><a class="nav-link" href="#newsBlock">@lang('public/nav.news')</a></li>--}}
 
                     @if(Auth::guest())
-                        <li class="nav-item"><a class="nav-link login" href="" data-toggle="modal"
-                                                data-target="#loginModal">@lang('public/nav.logIn')</a></li>
+{{--                        <li class="nav-item"><a class="nav-link login" href="" data-toggle="modal"--}}
+{{--                                                data-target="#loginModal">@lang('public/nav.logIn')</a></li>--}}
 
-                        <li class="nav-item"><a class="nav-link action" href="" data-toggle="modal"
-                                                data-target="#registerModal">@lang('public/nav.signUp')</a></li>
+                     {{-- <li class="nav-item"><a class="nav-link action" href="" data-toggle="modal"
+                                                data-target="#registerModal">@lang('public/nav.signUp')</a></li>--}}
                     @else
                         <li class="nav-item"><a class="nav-link action" href="{{ route('member.home') }}">@lang('public/nav.memberArea')</a></li>
                     @endif
@@ -100,6 +100,10 @@
                     @if(App::getLocale() != 'sk')
                         <li class="nav-item"><a class="nav-link" href="{{ route('public.lang', ['lang' => 'sk']) }}"><img src="{{ asset('images/flag_sk.png') }}" alt=""> <span class="d-lg-none">Slovensky</span></a></li>
                     @endif
+
+                    @if(App::getLocale() != 'nl')
+                        <li class="nav-item"><a class="nav-link" href="{{ route('public.lang', ['lang' => 'nl']) }}"><img src="{{ asset('images/flag_nl.png') }}" alt=""> <span class="d-lg-none">Nederlands</span></a></li>
+                    @endif
                 </ul>
             </div>
         </nav>
@@ -112,19 +116,19 @@
     <div id="pageFooter">
         <div class="container">
             <div class="row">
-                <div class="col-6 col-lg-3">
-                    <p class="text-center"><a href="{{ route('public.certification.index') }}">@lang('cert/index.title')</a></p>
-                </div>
+                {{--   <div class="col-6 col-lg-3">
+                      <p class="text-center"><a href="{{ route('public.certification.index') }}">@lang('cert/index.title')</a></p>
+                </div>--}}
 
-                <div class="col-6 col-lg-3">
+                <div class="col-6 col-lg-4">
                     <p class="text-center"><a href="" data-toggle="modal" data-target="#rdModal">@lang('legal/rd.title')</a></p>
                 </div>
 
-                <div class="col-6 col-lg-3">
+                <div class="col-6 col-lg-4">
                     <p class="text-center"><a href="" data-toggle="modal" data-target="#ppModal">@lang('legal/pp.title')</a></p>
                 </div>
 
-                <div class="col-6 col-lg-3">
+                <div class="col-6 col-lg-4">
                     <p class="text-center"><a href="" data-toggle="modal" data-target="#tacModal">@lang('legal/tac.title')</a></p>
                 </div>
             </div>

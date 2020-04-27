@@ -4,6 +4,7 @@ return [
 
     'touch' => 'Naše kontaktné údaje',
     'head' => 'Sídlo spoločnosti',
+    'klokocov-office' => 'Kancelária pre projekt Šírava Park',
     'address' => 'Adresa',
     'phone' => 'Telefón',
     'email' => 'E-mail',

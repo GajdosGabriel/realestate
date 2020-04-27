@@ -5,8 +5,11 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Auth;
 use Exception;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class UserActivity extends Model {
+    use SoftDeletes;
+
     public $table = 'user_activities';
 
     public $timestamps = false;
@@ -21,7 +24,7 @@ class UserActivity extends Model {
     ];
 
     public static function logActivity($intActivityID) {
-        if (! Auth::user()->hasAnyRole(['super admin','admin', 'agent']) ) {
+        if (! Auth::user()->hasAnyRole(['admin', 'agent']) ) {
             UserActivity::create([
                 'user_id' => Auth::user()->id,
                 'activity_id' => $intActivityID

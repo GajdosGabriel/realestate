@@ -22,7 +22,11 @@
     <div class="container project-details xs-mt-20">
         <div class="card">
             <div class="card-body">
-                <p>@lang('member/why_invest.6')</p>
+                <p><strong>@lang('member/why_invest.60')</strong></p>
+                <span>@lang('member/why_invest.61')</span><br>
+                <span>@lang('member/why_invest.6b')</span><br>
+{{--                <span>@lang('member/why_invest.6c')</span>--}}
+                <p></p>
 
                 {{--<h2 class="text-center">@lang('member/why_invest.master')</h2>--}}
 
@@ -59,6 +63,18 @@
                 @include('member.includes._silent_partnership')
 
                 <hr class="part primary">
+
+                {{-- Pool resources--}}
+                <h2 class="mt-4">@lang('member/how.pooled_resources')</h2>
+                <p>@lang('member/how.pooled_resources2')</p>
+
+
+                <hr class="part primary">
+
+
+
+
+
 
                 {{--<div class="row">--}}
                     {{--<div class="col-12 col-lg-6">--}}
@@ -102,7 +118,7 @@
                     {{--</div>--}}
                 {{--</div>--}}
 
-                <img src="{{ asset('images/member/invest_table_'  . App::getLocale() . '.jpg') }}" class="img-fluid d-block mx-auto" alt="" data-aos="zoom-in">
+                <img src="{{ asset('images/member/invest_table-'.App::getLocale().'.jpg') }}" class="img-fluid d-block mx-auto" alt="" data-aos="zoom-in">
 
 
                 <div class="text-center xs-mt-20">
@@ -113,15 +129,15 @@
 
                 @include('includes/videos/mixed')
 
-                <hr class="part primary">
+                {{--<hr class="part primary">--}}
 
-                <h4 class="text-center">@lang('member/why_invest.future')</h4>
+{{--                <h4 class="text-center">@lang('member/why_invest.future')</h4>--}}
 
 
                 {{--<p class="pt-2">@lang('member/why_invest.after_video1')</p>--}}
-                <p class="pt-2">@lang('member/why_invest.future_text')</p>
+{{--                <p class="pt-2">@lang('member/why_invest.future_text')</p>--}}
 
-                <img src="{{ asset('images/pub/carousel/1.jpg') }}" class="img-fluid d-block mx-auto" alt="" data-aos="zoom-in">
+{{--                <img src="{{ asset('images/pub/carousel/1.jpg') }}" class="img-fluid d-block mx-auto" alt="" data-aos="zoom-in">--}}
 
 
                 {{--<div class="text-center xs-mt-20">--}}
@@ -158,17 +174,17 @@
                     {{--<iframe allow="vr,gyroscope,accelerometer,fullscreen" scrolling="no" allowfullscreen="true" src="https://kuula.co/share/7Pj3d?fs=1&vr=0&thumbs=1&chromeless=0&logo=0"></iframe>--}}
                 {{--</div>--}}
 
-                <hr class="part primary">
+                {{--<hr class="part primary">--}}
 
-                <h4 class="text-center">@lang('member/why_invest.spa')</h4>
+                {{--<h4 class="text-center">@lang('member/why_invest.spa')</h4>--}}
 
-                <p class="xs-mt-20">@lang('member/why_invest.spa1')</p>
+                {{--<p class="xs-mt-20">@lang('member/why_invest.spa1')</p>--}}
 
-                <p>@lang('member/why_invest.spa2')</p>
+                {{--<p>@lang('member/why_invest.spa2')</p>--}}
 
-                <p>@lang('member/why_invest.spa3')</p>
+                {{--<p>@lang('member/why_invest.spa3')</p>--}}
 
-                <a href="{{ asset('images/member/spa.jpg') }}" data-lightbox="photos"><img src="{{ asset('images/member/sm/spa.jpg') }}" class="img-fluid d-block mx-auto" alt="" data-aos="zoom-in"></a>
+                {{--<a href="{{ asset('images/member/spa.jpg') }}" data-lightbox="photos"><img src="{{ asset('images/member/sm/spa.jpg') }}" class="img-fluid d-block mx-auto" alt="" data-aos="zoom-in"></a>--}}
 
                 <hr class="part primary">
 
@@ -188,7 +204,15 @@
                     <li>@lang('member/location.6')</li>
                 </ul>
 
-                <a href="{{ asset('images/member/hot/flldp/highway.jpg') }}" data-lightbox="photos"><img src="{{ asset('images/member/hot/flldp/sm/highway.jpg') }}" class="img-fluid mx-auto" alt="" data-aos="zoom-in"></a>
+                @if(App::getLocale() == 'nl')
+                    <a href="{{ asset('images/member/hot/flldp/highway_nl.jpg') }}" data-lightbox="photos">
+                        <img src="{{ asset('images/member/hot/flldp/sm/highway_nl.jpg') }}" class="img-fluid mx-auto" alt="" data-aos="zoom-in">
+                    </a>
+                @else
+                <a href="{{ asset('images/member/hot/flldp/highway.jpg') }}" data-lightbox="photos">
+                    <img src="{{ asset('images/member/hot/flldp/sm/highway.jpg') }}" class="img-fluid mx-auto" alt="" data-aos="zoom-in">
+                </a>
+                @endif
 
                 <hr class="part primary">
 

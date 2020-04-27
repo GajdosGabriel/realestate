@@ -10,8 +10,8 @@
                     <div class="item d-flex justify-content-between align-items-center">
                         <h3>Order details</h3>
 
-                        @role('admin|super admin')
-                        <a href="#" data-toggle="modal" data-target="#deleteOrder">
+                        @role('admin')
+                        <a href="#" data-toggle="modal" data-target="#delete">
                             <i class="far fa-trash-alt"></i>
                         </a>
                         @endrole
@@ -173,12 +173,9 @@
         </div>
     </div>
 
-
-    @component('components.modal.action')
-        @slot('identification') deleteOrder @endslot
-        @slot('header') Delete order @endslot
-        @slot('bodyTitle') Really? @endslot
-        @slot('bodyText') Do you really want to delete a user's order <strong>{{ $objOrder->name }} {{ $objOrder->surname }}</strong> @endslot
-        @slot('actionLink') {{ $objOrder->id }} @endslot
+    @component('components.modal.delete')
+    @slot('bodyText') Do you really want to delete a user's order <strong>{{ $objOrder->name }} {{ $objOrder->surname }}</strong> @endslot
+    @slot('actionLink') {{ route('admin.orders.delete', [ $objOrder->id])  }} @endslot
     @endcomponent
+
 @endsection

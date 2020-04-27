@@ -1,0 +1,40 @@
+<?php
+
+return [
+
+    'bank'=>' Bankoverschrijving ',
+'credit' => 'Creditcard',
+'iban' => 'IBAN nummer:',
+'holderName' => 'Accounthoudernaam:',
+'holderAddress' => 'Accounthouderadres:',
+'bankName' => 'Banknaam:',
+'bankAddress' => 'Bankadres:',
+'bic' => 'BIC / SWIFT-code:',
+'amount' => 'Bedrag:',
+'reason' => 'Per reden / massage / doel van overdracht vul in:',
+'pr' => 'Lening aan CEE Real Estate Group voor nummer (s) van promess (en):',
+'transfer' => 'Bewijs van overdracht',
+'bankDetails' => 'Uw bankgegevens',
+'off' => 'Officiële kosten per overschrijving van onze bank ČSOB:',
+'submit' => 'Uw bankgegevens worden ingediend.',
+'1' => 'Slowaakse nationale of EU-kosten per overschrijving:',
+'2' => 'EU, Island, Lichtenstein and Norway',
+'3' => 'Het bedrag dat niet hoger is dan 50.000 euro',
+'4' => 'Transfer 48 uur met uitzondering van weekends en nationale feestdagen',
+'5' => 'SEPA-betalingen brengen max. 2,50 euro per overschrijving in rekening',
+'6' => 'Internationale overschrijving met SWIFT:',
+'7' => 'Midden- en Zuid-Amerika, Midden-Oosten, Afrika, Azië, AUS en NZL',
+'8' => 'Transfer max. 5 dagen behalve weekends en nationale feestdagen',
+'9' => 'ONZE transacties 0,70% per transactie of minimaal 35 Euro',
+'10' => 'SHA-transacties 0,60% per transactie of minimaal 21 euro',
+'ready' => 'Voltooi deze investering!',
+'finish' => 'De investering voltooien is noodzakelijk als u in meer van onze projecten wilt investeren.',
+'text' => 'U kunt op elk gewenst moment gedetailleerde rapporten van al uw investeringen zien',
+'text2' => 'pagina, die toegankelijk is via de hoofdnavigatie in de rechterbovenhoek van de website.',
+'finish2' => 'Investering voltooien',
+'notary' => 'notary',
+'tdoReason' => 'Toekomstige storting op kapitaalfondsen van Šírava Development, s.r.o .; nummer van het investeringscontract: ',
+'11' => 'Vul uw bankgegevens in, waar we u de rentebetalingen zullen sturen.',
+'12' => 'Ik bevestig hierbij dat ik de investering heb overgemaakt naar CEE bankrekening hierboven weergegeven, of dat ik de bankgegevens heb gekopieerd en de investering zo snel mogelijk zal overboeken.'
+
+];

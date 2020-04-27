@@ -1,4 +1,4 @@
-<div class="tab-pane fade show active calculator calculator-pr" id="pr-tab" role="tabpanel" aria-labelledby="pr-tab">
+<div class="tab-pane fade show calculator calculator-pr" id="pr-tab" role="tabpanel" aria-labelledby="pr-tab">
     <input type="hidden" class="cal_price" value="5000">
 
     <div class="row">
@@ -70,7 +70,7 @@
         <div class="col-12 col-md-6">
             <div id="hpFlldp" class="project">
                 <header class="header">
-                    <h5 class="text-center">Šírava Park (Eco & Lake Resort)</h5>
+                    <h5 class="text-center">Šírava Park Boulevard</h5>
 
                     <h3 class="text-center">@lang('member/invest/pr.roi')</h3>
                 </header>
@@ -80,7 +80,7 @@
         <div class="col-12 col-md-6">
             <div id="hpFlldp2" class="project">
                 <header class="header">
-                    <h5 class="text-center">Šírava Park (Eco & Lake Resort)</h5>
+                    <h5 class="text-center">Šírava Park Glamping</h5>
 
                     <h3 class="text-center">@lang('member/invest/pr.roi')</h3>
                 </header>

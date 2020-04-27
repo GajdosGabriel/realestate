@@ -25,6 +25,6 @@ return [
     'photos' => 'Fotografie',
     'map' => 'Mapa',
     'more' => 'Vyžiadať viac informácií',
-    'pr' => 'Združené zdroje'
+    'pr' => 'Dlžobné úpisy'
 
 ];

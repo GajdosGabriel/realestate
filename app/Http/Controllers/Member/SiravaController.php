@@ -22,7 +22,7 @@ class SiravaController extends Controller {
 
     public function business_plan() {
         // Count .jpg files in the folder
-        $filesCount = count( glob(public_path('images/member/business_plan/' . "*.jpg",GLOB_BRACE)) );
+        $filesCount = count( glob(public_path('images/member/business_plan_en/' . "*.jpg",GLOB_BRACE)) );
 
         UserActivity::logActivity(62);
         return view('member/sirava/business_plan', compact('filesCount'));

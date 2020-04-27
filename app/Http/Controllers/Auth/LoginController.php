@@ -58,10 +58,7 @@ class LoginController extends Controller {
      */
     protected function authenticated(Request $request, $user) {
         DB::transaction(function () use ($user) {
-            UserActivity::create([
-                'user_id' => $user->id,
-                'activity_id' => 1
-            ]);
+            UserActivity::logActivity(1);
         }, 3);
 
         Cookie::queue('cee_track', $user->id, 60*24*30);

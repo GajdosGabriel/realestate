@@ -12,7 +12,7 @@ return [
     '5b' => 'How to order and calculate your profits',
     '6' => 'Watch our videos',
     '7b' => 'Order and track your investment',
-    'droneVideo' => 'Drone video',
+    'droneVideo' => 'CEE Company Video',
     'parkVideo' => 'Park video',
     'location' => 'Location',
     'renovations' => 'Why invest in Buy-Fix-Sell projects?',

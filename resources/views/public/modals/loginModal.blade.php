@@ -39,7 +39,7 @@
                 <div class="text-center xs-mt-20 lg-mt-50">
                     <a class="btn btn-link" href="{{ route('public.password.request') }}">@lang('auth.forgot')</a>
 
-                    <a href="" class="btn btn-link" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">@lang('auth.need')</a>
+                  {{-- <a href="" class="btn btn-link" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">@lang('auth.need')</a> --}}
                 </div>
             </div>
 

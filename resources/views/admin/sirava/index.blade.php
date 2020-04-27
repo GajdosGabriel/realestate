@@ -74,11 +74,19 @@
                     <div class="card-body">
                         <ul class="nav nav-tabs xs-mb-20">
                             <li class="nav-item">
-                                <a class="nav-link active" href="">Holiday leads <span class="badge badge-secondary">{{ $objPaginator->total() }}</span></a>
+                                <a class="nav-link active" href="">Glamping leads <span class="badge badge-secondary">{{ $objPaginator->total() }}</span></a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.sirava.holiday') }}">Holiday leads</a>
                             </li>
 
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.sirava.re') }}">Real Estate sign ups</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.sirava.thermalSpa') }}">Thermal Spa Leads</a>
                             </li>
                         </ul>
 

@@ -32,6 +32,14 @@ class UserController extends Controller {
         ]);
     }
 
+    public function delete(User $user){
+
+       UserActivity::whereUserId($user->id)->get()->each->delete();
+        $user->delete();
+        flash('User was successfully deleted.')->success();
+        return redirect('admin/users');
+    }
+
     public function new() {
         return view('admin/users/new');
     }
@@ -142,7 +150,9 @@ class UserController extends Controller {
             $arrUsers = User::role($name)
                 ->with(['referral', 'roles', 'note'])
                 ->orderBy('id', 'DESC');
-            if (!Cookie::has('cee_red')) $arrUsers->where('status', '!=', 1);
+
+            // Staff are red client with don't showing
+//            if (!Cookie::has('cee_red')) $arrUsers->where('status', '!=', 1);
             if (isset($_GET['search'])) $arrUsers->search($_GET['search']);
             $arrUsers = $arrUsers->paginate(50);
 
@@ -187,7 +197,7 @@ class UserController extends Controller {
 
     public function agents() {
 //         Without me
-        $arrUsers = User::whereNotIn('id', [2474])->role('agent')->with(['referral', 'roles', 'note'])->orderBy('id', 'DESC');
+        $arrUsers = User::role('agent')->with(['referral', 'roles', 'note'])->orderBy('id', 'DESC');
         if (isset($_GET['search'])) $arrUsers->search($_GET['search']);
         $arrUsers = $arrUsers->paginate(50);
 
@@ -206,7 +216,7 @@ class UserController extends Controller {
 
     public function roles($id) {
         $objUser = User::findOrFail($id);
-        $arrRoles = Role::whereNotIn('id', [41])->orderBy('name')->get();
+        $arrRoles = Role::orderBy('name')->get();
 
         return view('admin/users/roles')->with([
             'objUser' => $objUser,

@@ -15,14 +15,33 @@
 
     <div class="container project-details xs-mt-20">
         @if(App::getLocale() == 'sk')
-            @for($i = 1; $i <= 18; $i++)
-                <img src="{{ asset('images/member/master_plan_sk/master_plan_sk_page-' . sprintf('%03d', $i) . '.jpg') }}" class="img-fluid d-block mx-auto xs-mb-20" alt="">
-            @endfor
-        @else
-            @for($i = 1; $i <= 18; $i++)
-                <img src="{{ asset('images/member/master_plan/master_plan_en_page-' . sprintf('%03d', $i) . '.jpg') }}" class="img-fluid d-block mx-auto xs-mb-20" alt="">
+            @for($i = 1; $i <= 40; $i++)
+                <img src="{{ asset('images/member/master_plan_sk/master_plan_sk-'. $i .'.jpg') }}" class="img-fluid d-block mx-auto xs-mb-20" alt="">
             @endfor
         @endif
+
+        @if(App::getLocale() == 'en')
+            @for($i = 1; $i <= 40; $i++)
+                <img src="{{ asset('images/member/master_plan_en/master_plan_en-'. $i .'.jpg') }}" class="img-fluid d-block mx-auto xs-mb-20" alt="">
+            @endfor
+        @endif
+
+        @if(App::getLocale() == 'nl')
+            @for($i = 1; $i <= 40; $i++)
+                <img src="{{ asset('images/member/master_plan_nl/master_plan_nl-'. $i .'.jpg') }}" class="img-fluid d-block mx-auto xs-mb-20" alt="">
+            @endfor
+        @endif
+
+
+            {{----}}
+            {{--@for($i = 1; $i <= 59; $i++)--}}
+                {{--<img src="{{ asset('images/member/master_plan_en/master_plan_nl-' . $i . '.jpg') }}" class="img-fluid d-block mx-auto xs-mb-20" alt="">--}}
+            {{--@endfor--}}
+        {{--@else--}}
+            {{--@for($i = 1; $i <= 59; $i++)--}}
+                    {{--<img src="{{ asset('images/member/master_plan_en/master_plan_en-' . $i . '.jpg') }}" class="img-fluid d-block mx-auto xs-mb-20" alt="">--}}
+                {{--@endfor--}}
+        {{--@endif--}}
 
         <div class="text-center xs-mt-20 xs-mb-20">
             <a href="{{ asset('documents/master_plan_boulevard_' . App::getLocale() . '.pdf') }}" class="btn btn-secondary" target="_blank">@lang('general.downloadPDF')</a>

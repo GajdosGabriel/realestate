@@ -18,6 +18,7 @@ class CreateOrderPrTable extends Migration {
 			$table->integer('order_id')->unsigned()->index('fk_order_pr-order_idx');
 			$table->integer('number')->unsigned();
 			$table->float('duration', 10, 0)->unsigned();
+			$table->softDeletes();
 		});
 	}
 

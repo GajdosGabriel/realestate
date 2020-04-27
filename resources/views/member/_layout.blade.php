@@ -106,6 +106,10 @@
                             <a class="dropdown-item" href="{{ route('public.lang', ['lang' => 'sk']) }}"><img src="{{ asset('images/flag_sk.png') }}" alt=""> Slovensky</a>
                         @endif
 
+                        @if(App::getLocale() != 'nl')
+                            <a class="dropdown-item" href="{{ route('public.lang', ['lang' => 'nl']) }}"><img src="{{ asset('images/flag_nl.png') }}" alt=""> Nederlands</a>
+                        @endif
+
                         <div class="dropdown-divider"></div>
 
                         <a class="dropdown-item" href=""

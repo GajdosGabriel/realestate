@@ -7,21 +7,22 @@
 
             <div class="col-12 col-lg-4">
                 <div class="xs-p-10">
+{{--                    <p>@lang('member/how.silent_partnership0')</p>--}}
                     <p>@lang('member/invest/step1.description1')</p>
                     <p>@lang('member/invest/step1.description2')</p>
-                    <p>@lang('member/invest/step1.description2a')</p>
                     <p>@lang('member/invest/step1.description3')</p>
+                    <p>@lang('member/invest/step1.description4')</p>
                 </div>
             </div>
 
             <div class="col-12 col-lg-4">
                 <div class="xs-p-10 calculator">
                     <p>
-                        @lang('member/invest/step1.available') &euro; <strong>{{ number_format(6000000, 0, ',', ' ') }}</strong>
+                        @lang('member/invest/step1.available') &euro; <strong>{{ number_format(4000000, 0, ',', ' ') }}</strong>
 
                         <br>
 
-                        @lang('member/invest/step1.this', ['shares' => 40 - $intSoldTDOShares])
+                        @lang('member/invest/step1.this', ['shares' => 27 - $intSoldTDOShares])
                     </p>
 
                     <div class="calculator-sp">

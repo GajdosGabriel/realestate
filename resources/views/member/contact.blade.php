@@ -21,7 +21,7 @@
                 <address>
                     <span class="color_primary">@lang('public/contact.address'):</span> Gorkého 5, Bratislava, 81101<br>
 
-                    <span class="color_primary">@lang('public/contact.phone'):</span> +421 233 056 141<br>
+                    <span class="color_primary">@lang('public/contact.phone'):</span> +421 915 36 46 22<br>
 
                     <span class="color_primary">E-mail:</span> <a href="mailto:info@cee-realestate.com">info@cee-realestate.com</a><br>
 
@@ -37,6 +37,9 @@
                 </div>
             </div>
         </div>
+
+
+        @include('public.blocks.contact-klokocov')
 
         {{--<div class="row lg-mt-50">--}}
             {{--<div class="col-12 col-lg-4 xs-pt-50 lg-pt-0">--}}

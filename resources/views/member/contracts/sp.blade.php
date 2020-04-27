@@ -2,17 +2,24 @@
 
 @section('content')
     {{-- Slovak title header --}}
-    <h2 class="text-center">@lang('member/contracts/sp.title', [], 'sk')</h2>
+    <h2 class="text-center">
+        ZMLUVA O TICHOM SPOLOČENSTVE A ZMLUVA O BUDÚCEJ ZMLUVE O KÚPE AKCIÍ
+    </h2>
     <p class="text-center">
-        @lang('member/contracts/sp.law', [], 'sk')
+        uzatvorená podľa § 673 a nasl. a § 289 a nasl. zákona č. 513/1991 Zb., Obchodný zákonník v platnom znení
+        (ďalej aj ako „Zmluva“)
     </p>
 
 
-    {{-- Englist title header --}}
-    <h2 class="text-center lang">CONTRACT FOR THE SILENT PARTNERSHIP</h2>
+    {{-- Aby v SK language sa generoval iba Sk text--}}
+    @if(App::getLocale() != 'sk')
+    <h2 class="text-center lang">@lang('member/contracts/sp.title')</h2>
     <p class="text-center lang">
-        concluded under Section 673 et seq. of Act no. 513/1991 Coll., Commercial Code, as amended (hereinafter referred to as "the Contract")
+        @lang('member/contracts/sp.title2')
     </p>
+    @endif
+    {{-- End of Title header --}}
+
 
 
     <table class="details">
@@ -71,21 +78,22 @@
         {{--Dalej ako podnikateľ--}}
         <tr>
             <th>ďalej ako "Podnikateľ"</th>
-
             <th>ďalej ako "Tichý spoločník"</th>
         </tr>
     </table>
 
     {{--Zlom prvej strany --}}
+    @if(App::getLocale() != 'sk')
     <pagebreak />
-    <br>
+    @endif
 
-
-        <table class="details lang">
+    {{--   Tabuľka č.2 --}}
+    @if(App::getLocale() != 'sk')
+    <table class="details lang">
             <tr>
-                <th>Entrepreneur</th>
+                <th>@lang('member/contracts/sp.en')</th>
 
-                <th>Silent partner</th>
+                <th>@lang('member/contracts/sp.sp')</th>
             </tr>
 
             <tr>
@@ -144,64 +152,25 @@
                 <th>hereafter as "Silent partner"</th>
             </tr>
         </table>
-
+    @endif
 
     <br>
 
+
+    {{--Základné parametre Investície do realitného projektu:--}}
     <table class="details">
-        <tr>
-            <th colspan="2">
-                @lang('member/contracts/tdo.params', [], 'sk')
-            </th>
-        </tr>
-
-        <tr>
-            <td>@lang('member/contracts/tdo.name', [], 'sk')</td>
-
-            <td>
-                <strong>{{ $objOrder->sp->project->name }}</strong>
-            </td>
-        </tr>
-
-        <tr>
-            <td>@lang('member/contracts/tdo.location', [], 'sk')</td>
-
-            <td>
-                <strong>{{ $objOrder->sp->project->location }}</strong>
-            </td>
-        </tr>
-
-        <tr>
-            <td>@lang('member/contracts/tdo.2', [], 'sk')</td>
-
-            <td>
-                <strong>{{ number_format($objOrder->sp->shares, 2, ',', ' ') }}%</strong><br>
-                @lang('member/contracts/tdo.4', [], 'sk')
-            </td>
-        </tr>
-
-        <tr>
-            <td>@lang('member/contracts/tdo.3', [], 'sk')</td>
-
-            <td>
-                &euro; <strong>{{ number_format($objOrder->sp->investment, 0, ',', ' ') }}</strong><br>
-                @lang('member/contracts/tdo.5', [], 'sk')
-            </td>
-        </tr>
-    </table>
-
-    <br>
-
-
-    <table class="details lang">
             <tr>
                 <th colspan="2">
-                    @lang('member/contracts/tdo.params')
+                    Základné parametre Investície do realitného projektu:
+                    {{--@lang('member/contracts/tdo.params', [], 'sk')--}}
                 </th>
             </tr>
 
             <tr>
-                <td>@lang('member/contracts/tdo.name')</td>
+                <td>
+                    Názov
+                    {{--@lang('member/contracts/tdo.name', [], 'sk')--}}
+                </td>
 
                 <td>
                     <strong>{{ $objOrder->sp->project->name }}</strong>
@@ -209,7 +178,10 @@
             </tr>
 
             <tr>
-                <td>@lang('member/contracts/tdo.location')</td>
+                <td>
+                    Lokácia
+                    {{--@lang('member/contracts/tdo.location', [], 'sk')--}}
+                </td>
 
                 <td>
                     <strong>{{ $objOrder->sp->project->location }}</strong>
@@ -217,37 +189,89 @@
             </tr>
 
             <tr>
-                <td>@lang('member/contracts/tdo.2')</td>
+                <td>
+                    Rezervovaný budúci podiel na základnom imaní spoločnosti Šírava Development, s.r.o.
+                    {{--@lang('member/contracts/tdo.2', [], 'sk')--}}
+                </td>
 
                 <td>
                     <strong>{{ number_format($objOrder->sp->shares, 2, ',', ' ') }}%</strong><br>
-                    @lang('member/contracts/tdo.4')
+                    (ďalej len „Obchodný podiel“)
+{{--                    @lang('member/contracts/tdo.4', [], 'sk')--}}
                 </td>
             </tr>
 
             <tr>
-                <td>@lang('member/contracts/tdo.3')</td>
+                <td>
+                    Záväzok vkladu investície do kapitálových fondov spoločnosti Šírava Development, s.r.o.
+                    {{--@lang('member/contracts/tdo.3', [], 'sk')--}}
+                </td>
 
                 <td>
                     &euro; <strong>{{ number_format($objOrder->sp->investment, 0, ',', ' ') }}</strong><br>
-                    @lang('member/contracts/tdo.5')
+                    (ďalej len „Investícia“)
+{{--                    @lang('member/contracts/tdo.5', [], 'sk')--}}
                 </td>
             </tr>
         </table>
 
+    <br>
+    @if(App::getLocale() != 'sk')
+    <table class="details lang">
+        <tr>
+            <th colspan="2">
+                @lang('member/contracts/tdo.params')
+            </th>
+        </tr>
 
+        <tr>
+            <td>@lang('member/contracts/tdo.name')</td>
+
+            <td>
+                <strong>{{ $objOrder->sp->project->name }}</strong>
+            </td>
+        </tr>
+
+        <tr>
+            <td>@lang('member/contracts/tdo.location')</td>
+
+            <td>
+                <strong>{{ $objOrder->sp->project->location }}</strong>
+            </td>
+        </tr>
+
+        <tr>
+            <td>@lang('member/contracts/tdo.2')</td>
+
+            <td>
+                <strong>{{ number_format($objOrder->sp->shares, 2, ',', ' ') }}%</strong><br>
+                @lang('member/contracts/tdo.4')
+            </td>
+        </tr>
+
+        <tr>
+            <td>@lang('member/contracts/tdo.3')</td>
+
+            <td>
+                &euro; <strong>{{ number_format($objOrder->sp->investment, 0, ',', ' ') }}</strong><br>
+                @lang('member/contracts/tdo.5')
+            </td>
+        </tr>
+    </table>
+    @endif
+    {{-- END Základné parametre Investície do realitného projektu:--}}
     <br>
 
-    <h3 class="text-center">Článok I <br> Preambula</h3>
+    {{--Preambula 1 --}}
+    <h3 class="text-center">Článok I - Preambula</h3>
+    <p>Podnikateľ spolu so svojou materskou spoločnosťou CEE Real Estate Group s.r.o., pripravujú realitný projekt s označením Šírava Park v oblasti Zemplínska Šírava v katastrálnom území obce Klokočov z uvedeného dôvodu sa Zmluvné strany dohodli, že do momentu nadobudnutia vlastníckeho práva k akciám v spoločnosti Podnikateľa za podmienok deﬁnovaných v čl. VII tejto Zmluvy má Tichý spoločník záujem podieľať sa na podnikaní Podnikateľa v súvislosti s realitným projektom s označením Šírava Park prostredníctvom investície ako peňažnej čiastky vo forme vkladu tichého spoločníka podľa § 673 a nasl. zákona č. 513/1991 Zb., Obchodný zákonník v tejto Zmluve.</p>
 
-    <p>Podnikateľ spolu so svojou materskou spoločnosťou CEE Real Estate Group s.r.o., pripravujú realitný projekt s označením Šírava Park (Eco & Lake Resort) v oblasti Zemplínska Šírava v katastrálnom území obce Klokočov z uvedeného dôvodu sa Zmluvné strany dohodli, že do momentu nadobudnutia vlastníckeho práva k akciám v spoločnosti Podnikateľa za podmienok definovaných v čl. VII tejto Zmluvy má Tichý spoločník záujem podieľať sa na podnikaní Podnikateľa v súvislosti s realitným projektom s označením Šírava Park (Eco & Lake Resort) prostredníctvom investície ako peňažnej čiastky vo forme vkladu tichého spoločníka podľa § 673 a nasl. zákona č. 513/1991 Zb., Obchodný zákonník v tejto Zmluve.</p>
 
-    {{--@if(App::getLocale() != 'sk')--}}
-        <h3 class="text-center lang">Article I <br>
-            Preamble</h3>
+    @if(App::getLocale() != 'sk')
+        <h3 class="text-center lang">@lang('member/contracts/sp.article1')</h3>
 
-        <p class="lang">The Entrepreneur together with its parent company CEE Real Estate Group sro are preparing a real estate project entitled Šírava Park in the Zemplínska Šírava area in the cadastral area of the municipality of Klokočov. For this reason, the Parties agree that, until the acquisition of title to shares in the Entrepreneur under the conditions defined in Art. VII of this Agreement, the Silent partner wishes to participate in the Entrepreneur's business in connection with the real estate project Šírava Park through an investment made in a monetary form (contribution) as a silent partner pursuant to Section 673 et seq. of Act no. 513/1991 Coll., Commercial Code.</p>
-    {{--@endif--}}
+        <p class="lang">@lang('member/contracts/sp.article11')</p>
+    @endif
 
 
 
@@ -255,40 +279,37 @@
     <h3 class="text-center">Článok II Predmet zmluvy a vklad</h3>
 
     <ol>
-        <li>Predmetom Zmluvy je na strane jednej záväzok Tichého spoločníka poskytnúť Podnikateľovi vklad a podieľať sa spolu s ním na jeho podnikaní a na strane druhej záväzok Podnikateľa spočívajúci vo vyplácaní časti zisku vyplývajúceho z podielu Tichého spoločníka na výsledku podnikania.</li>
+        <li>Predmetom Zmluvy je na strane jednej záväzok Tichého spoločníka poskytnúť Podnikateľovi vklad a podieľať sa spolu s ním na jeho podnikaní a na strane druhej záväzok Podnikateľa spočívajúci vo vyplácaní časti zisku vyplývajúceho z podielu Tichého spoločníka na výsledku podnikania.</li>
         <li>@lang('member/contracts/sp.2_2', ['amount' =>  number_format($objOrder->sp->investment, 0, ',', ' ') ], 'sk')</li>
-        <li>Tichý spoločník sa zväzuje poskytnúť Podnikateľovi Vklad podľa bodu 2 tohto článku Zmluvy tým, že peňažné prostriedky zodpovedajúce výške vkladu poukáže najneskôr do 3 pracovných dní odo dňa podpisu tejto Zmluvy na bankový účet CEE Real Estate Group s.r.o. IBAN: SK91 7500 0000 0040 2601 5125, ktorý je platobným miestom stanoveným Podnikateľom touto Zmluvou za účelom odovzdania Vkladu Podnikateľovi.</li>
-        <li>CEE Real Estate Group s.r.o sa zaväzuje odovzdať Vklad Podnikateľovi najneskôr dňa 31.12. 2022 v prípade, ak dovtedy nedôjde k prevodu akcií spoločnosti Podnikateľa, alebo spoločnosti Právneho nástupcu podnikateľa na Tichého spoločníka. Predmetom tejto Zmluvy je súčasne zväzok uzatvoriť zmluvu o budúcej zmluve o kúpe akcií Podnikateľa za podmienok stanovených v čl. VII tejto  Zmluvy.</li>
-
+        <li>Tichý spoločník sa zaväzuje poskytnúť Podnikateľovi Vklad podľa bodu 2 tohto článku Zmluvy tým, že peňažné prostriedky zodpovedajúce výške vkladu poukázal odo dňa podpisu tejto Zmluvy na bankový účet CEE Real Estate Group s.r.o. IBAN: SK91 7500 0000 0040 2612 5125, ktorý je platobným miestom stanoveným Podnikateľom touto Zmluvou za účelom odovzdania Vkladu Podnikateľovi.</li>
+        <li>CEE Real Estate Group s.r.o sa zaväzuje odovzdať Vklad Podnikateľovi najneskôr dňa 31.12. 2022 v prípade, ak dovtedy nedôjde k prevodu akcií spoločnosti Podnikateľa, alebo spoločnosti Právneho nástupcu podnikateľa na Tichého spoločníka. Predmetom tejto Zmluvy je súčasne zväzok uzatvoriť zmluvu o budúcej zmluve o kúpe akcií. Podnikateľa za podmienok stanovených v čl. VII tejto Zmluvy.</li>
         <li>@lang('member/contracts/sp.3', ['amount' => $objOrder->sp->investment], 'sk')</li>
-
-        <li>Podnikateľ touto Zmluvou vyhlasuje že Vklad prijíma a zaväzuje sa zaplatiť Tichému spoločníkovi podiel z čistého zisku vo výške podľa čl. III bod 1.</li>
-
+        <li>Podnikateľ touto Zmluvou vyhlasuje že Vklad Vklad od Tichého spoločníka prijíma za podmienok definovaných v tejto Zmluve a zaväzuje sa zaplatiť Tichému spoločníkovi podiel z čistého zisku vo výške podľa čl. III bod 1.</li>
         <li>Tichý spoločník má ohľadne Vkladu právne postavenie, aké má veriteľ ohľadne svojej pohľadávky, nie je však oprávnený požadovať vrátenie Vkladu pred zánikom tejto Zmluvy.</li>
+        <li>Predmetom tejto Zmluvy je súčasne zväzok uzatvoriť zmluvu o budúcej zmluve o kúpe akcií podnikateľa za podmienok stanovených v čl. VII tejto Zmluvy.</li>
     </ol>
 
-    {{--@if(App::getLocale() != 'sk')--}}
-        <h3 class="text-center lang">Article II <br>
-            Subject matter of the Agreement and Contribution</h3>
+
+
+    {{--Preambula 2 --}}
+    @if(App::getLocale() != 'sk')
+        <h3 class="text-center lang">@lang('member/contracts/sp.article2')</h3>
 
         <ol class="lang">
-            <li>The subject matter of the Contract is, on the one hand, the pledge of the Silent partner to provide the Entrepreneur with a contribution and to participate in its business and, on the other hand, the Entrepreneur's obligation to pay part of the profits corresponding to the share of the Silent partner in the business result.</li>
-
-            <li>The Silent partner undertakes to provide the Entrepreneur with a cash deposit of EUR {{ number_format($objOrder->sp->investment, 0, ',', ' ') }} (hereinafter referred to as the Contribution).</li>
-
-            <li>The Silent partner undertakes to provide the Entrepreneur with the contribution under point 2 of this Article of the Agreement by transferring funds corresponding to the amount of the contribution no later than 3 working days from the date of signing this Agreement to the bank account of CEE Real Estate Group s.r.o. IBAN: Fbud, which is the payment venue designated by the Entrepreneur under this Agreement for the purpose of handing over the contribution to the Entrepreneur.</li>
-
-            <li>CEE Real Estate Group s.r.o undertakes to hand over the contribution to the Entrepreneur no later than December 31, 2022 if the shares of the Entrepreneur or Entrepreneur's Legal uccessor are not transferred to the Silent partner. The subject matter of this Agreement is at the same time the obligation to conclude a future contract on the purchase of shares of the Entrepreneur under the conditions set out in Art. VII of this Agreement.</li>
-
-            <li>By this Agreement, the Entrepreneur declares that it accepts the contribution from the Silent partner under the conditions defined in this Agreement and undertakes to pay the Silent partner a share of the Entrepreneur's net profit in accordance with Art. III, par. 1.</li>
-
-            <li>With regard to the contribution, the Silent partner has a legal status of the creditor, however, it is not entitled to demand the return of the contribution before the termination of this Agreement.</li>
-
-            <li>The subject matter of this Agreement is at the same time the obligation to conclude a future contract on the purchase of shares of the Entrepreneur under the conditions set forth in Art. VII of this Agreement.</li>
+            <li> @lang('member/contracts/sp.article21')</li>
+            <li> @lang('member/contracts/sp.article22', ['amount' => number_format($objOrder->sp->investment, 0, ',', ' ')])</li>
+            <li> @lang('member/contracts/sp.article23')</li>
+            <li> @lang('member/contracts/sp.article24')</li>
+            <li> @lang('member/contracts/sp.article25')</li>
+            <li> @lang('member/contracts/sp.article26')</li>
+            <li> @lang('member/contracts/sp.article27')</li>
         </ol>
-    {{--@endif--}}
+        @endif
+    {{--End of Preambula 2 --}}
 
-    <h3 class="text-center">@lang('member/contracts/sp.a3', [], 'sk')</h3>
+
+    {{--Preambula 3 --}}
+    <h3 class="text-center">Článok III - Podiel Tichého spoločníka na výsledku podnikania Podnikateľa</h3>
 
     <ol>
         <li>@lang('member/contracts/sp.7', ['shares' => number_format($objOrder->sp->shares, 2, ',', ' ')], 'sk')</li>
@@ -309,22 +330,24 @@
     </ol>
 
 
-        <h3 class="text-center lang">Article III <br>
-            Silent share in the result of the Entrepreneur's business</h3>
+    @if(App::getLocale() != 'sk')
+
+        <h3 class="text-center lang">@lang('member/contracts/sp.article3')</h3>
 
         <ol class="lang">
-            <li>The Parties agree that the Silent partner's share of the Entrepreneur's net profit is {{ number_format($objOrder->sp->shares, 2, ',', ' ') }} % of the net profit.</li>
-            <li>The determination of the share of the Silent partner in the business result is determined by the annual financial statements of the Entrepreneur.</li>
-            <li>The Partner begins to participate in the Entrepreneur's business on the day the contribution has been made.</li>
-            <li>The Silent partner shall be entitled to a share of profits as set out in par. 1 of this Article within 30 days of the date of approval of the financial statements in the Entrepreneur' in accordance with the Entrepreneur's Deed of Foundation and applicable law.</li>
-            <li>In the event that the Agreement expires in the course of a calendar year, the Silent partner is entitled to a share in profit corresponding to the period of the year during which the Agreement was in force.</li>
-            <li>The profit share shall be paid in euro to the bank account of the Silent partner.</li>
-            <li>The silent partnership contribution is reduced by the share of the loss. The share in profit in the following years increases the reduced amount of contribution. The entitlement of the Silent partner to a share in profit arises after its contribution reaches the original amount.</li>
-            <li>The Silent partner is not obliged to add to its contribution in the case of business loss. The Silent partner participates in the loss only up to the amount of its contribution.</li>
+            <li> @lang('member/contracts/sp.article31', ['shares' => number_format($objOrder->sp->shares, 2, ',', ' ')])</li>
+            <li> @lang('member/contracts/sp.article32')</li>
+            <li> @lang('member/contracts/sp.article33')</li>
+            <li> @lang('member/contracts/sp.article34')</li>
+            <li> @lang('member/contracts/sp.article35')</li>
+            <li> @lang('member/contracts/sp.article36')</li>
+            <li> @lang('member/contracts/sp.article37')</li>
+            <li> @lang('member/contracts/sp.article38')</li>
         </ol>
+    @endif
 
 
-    <h3 class="text-center">@lang('member/contracts/sp.a4', [], 'sk')</h3>
+    <h3 class="text-center">Článok IV - Právo kontroly</h3>
 
     <ol>
         <li>Tichý spoločník je oprávnený nahliadať do všetkých obchodných dokladov a účtovných záznamov týkajúcich sa podnikania, na ktorom sa podieľa svojím vkladom podľa Zmluvy.</li>
@@ -336,40 +359,39 @@
         <li>Podnikateľ je povinný na žiadosť Tichého spoločníka zaslať požadované informácie alebo kópie listín Tichému spoločníkovi na ním uvedenú adresu na vlastné náklady.</li>
     </ol>
 
-
-        <h3 class="text-center lang">Article IV <br>
-            Right of control</h3>
+    {{--Preambula 4 --}}
+    @if(App::getLocale() != 'sk')
+        <h3 class="text-center lang"> @lang('member/contracts/sp.article4')</h3>
 
         <ol class="lang">
-            <li>The Silent partner shall have the right to inspect all business documents and accounting records relating to the business in which it participates with its contribution under the Contract.</li>
-
-            <li>Upon request, the Entrepreneur is obliged to provide the Silent partner with information about the business plan of the Entrepreneur for the future and about the anticipated development of the state of assets and finances related to the Entrepreneur's business in which the Silent partner participates with its contribution under this Agreement.</li>
-
-            <li>Upon request, the Entrepreneur is obliged to provide the Silent partner with a copy of the financial statements, if the law imposes an obligation on the Entrepreneur to have audited financial statements and an annual report.</li>
-
-            <li>The Entrepreneur is obliged to send the requested information or copies of the documents to the Silent partner at his own expense at the request of the Silent Partner.</li>
+            <li>@lang('member/contracts/sp.article41')</li>
+            <li>@lang('member/contracts/sp.article42')</li>
+            <li>@lang('member/contracts/sp.article43')</li>
+            <li>@lang('member/contracts/sp.article44')</li>
         </ol>
+    @endif
 
-
-    <h3 class="text-center">@lang('member/contracts/sp.a5', [], 'sk')</h3>
-
+    {{--Preambula 5 --}}
+    <h3 class="text-center">Článok V - Povinnosť mlčanlivosti</h3>
     <ol>
         <li>Tichý spoločník sa zaväzuje zachovávať mlčanlivosť o všetkých skutočnostiach tvoriacich obsah podnikateľských aktivít, ktorých je Podnikateľ zúčastnený a na ktorých sa Tichý spoločník podieľa svojím vkladom.</li>
-
         <li>V prípade, že Tichý spoločník poruší povinnosti, ktoré mu vyplývajú z bodu 1 tohto článku zaväzuje sa Podnikateľovi zaplatiť zmluvnú pokutu vo výške 5% Vkladu.</li>
     </ol>
 
 
-        <h3 class="text-center lang">Article V <br>
-            Obligation to maintain confidentiality</h3>
+    @if(App::getLocale() != 'sk')
+    <h3 class="text-center lang">@lang('member/contracts/sp.article5')</h3>
 
-        <ol class="lang">
-            <li>The Silent partner undertakes to maintain the confidentiality of all facts constituting the content of the business activities in which the Entrepreneur is involved and in which the Silent partner participates with its contribution.</li>
-        </ol>
+    <ol class="lang">
+        <li>@lang('member/contracts/sp.article51')</li>
+        <li>@lang('member/contracts/sp.article52')</li>
+    </ol>
+
+    @endif
 
 
-
-    <h3 class="text-center">@lang('member/contracts/sp.a6', [], 'sk')</h3>
+    {{--Preambula 6 --}}
+    <h3 class="text-center">Článok VI - Ukončenie Zmluvy</h3>
 
     <ol>
         <li>Zmluva sa uzatvára na dobu neurčitú.</li>
@@ -378,116 +400,92 @@
 
             <ol type="a">
                 <li>uplatnením opcie podľa čl. VII tejto Zmluvy.</li>
-
                 <li>výpoveďou, ak nebola zmluva uzavretá na dobu určitú,</li>
-
                 <li>ak dosiahne podiel Tichého spoločníka na strate výšku jeho vkladu,</li>
-
                 <li>@lang('member/contracts/sp.26', [], 'sk')</li>
-
                 <li>@lang('member/contracts/sp.27', [], 'sk')</li>
             </ol>
         </li>
 
-        <li>@lang('member/contracts/sp.28', [], 'sk')</li>
-
-        <li>@lang('member/contracts/sp.29', [], 'sk')</li>
+        <li>Ktorákoľvek zo Zmluvných strán môže Zmluvu vypovedať s trojmesačnou výpovednou lehotou, pričom výpovedná lehota začína plynúť mesiac nasledujúci po doručení výpovede. Tichý spoloční nie je oprávnený Zmluvu vypovedať skôr ako dňa 31.12. 2022.</li>
+        <li>4.	Do 30 dní po zániku zmluvy je Podnikateľ povinný vrátiť Tichému spoločníkovi vklad zvýšený alebo znížený o jeho podiel na výsledku podnikania. Podnikateľ nie je povinný vrátiť Tichému spoločníkovi Vklad podľa predchádzajúcej vety v prípade ak došlo k zániku tejto Zmluvy v súlade s bodom 2 pís. a) tohto článku (opcia na kúpu akcií Podnikateľa).</li>
     </ol>
 
 
-        <h3 class="text-center lang">Article VI <br>
-            Termination of the Agreement
-        </h3>
+    @if(App::getLocale() != 'sk')
+        <h3 class="text-center lang">@lang('member/contracts/sp.article6')</h3>
 
         <ol class="lang">
-            <li>The Agreement is concluded for an indefinite period.</li>
+            <li> @lang('member/contracts/sp.article61')</li>
 
-            <li>2.	The participation of the Silent partner in the Entrepreneur's business and at the same time this Agreement shall terminate by:
+            <li> @lang('member/contracts/sp.article62')
 
                 <ol type="a">
-                    <li>exercising the option under Art. VII of this Agreement.</li>
-
-                    <li>by giving notice if the Agreement has not been concluded for a definite period,</li>
-
-                    <li>if the share of the Silent partner in the loss reaches the amount of its contribution,</li>
-
-                    <li>the business to which the Agreement applies ceases to exist,</li>
-
-                    <li>the Entrepreneur declares bankruptcy or the petition for bankruptcy is rejected due to lack of property.</li>
+                    <li>@lang('member/contracts/sp.article63')</li>
+                    <li>@lang('member/contracts/sp.article64')</li>
+                    <li>@lang('member/contracts/sp.article65')</li>
+                    <li>@lang('member/contracts/sp.article66')</li>
+                    <li>@lang('member/contracts/sp.article67')</li>
                 </ol>
             </li>
 
-            <li>Either Party may terminate the Agreement with a three-month notice period, the notice period commencing on the month following receipt of the notice. The Silent partner is not entitled to terminate the Agreement before 31 December, 2022.</li>
-
-            <li>Within 30 days after the termination of the Agreement, the Entrepreneur is obliged to return to the Silent partner its contribution increased or decreased by its share in the business result. The Entrepreneur shall not be obliged to return to the Silent partner the contribution pursuant to par. 4 of this Article of the Agreement in the event that this Agreement is terminated in accordance with par 2 (a) of this Article (the option to purchase the shares of the Entrepreneur or the option to purchase the shares of the Entrepreneur's Legal Successor in accordance with Article VII of this Agreement), because in this case the contribution is considered to be the purchase price for the transfer of shares in the Entrepreneur or Entrepreneur's Legal successor.</li>
+            <li>@lang('member/contracts/sp.article68')</li>
+            <li>@lang('member/contracts/sp.article69')</li>
         </ol>
+        @endif
 
 
+    {{--Preambula 7 --}}
 
-    {{--START New version silent partner--}}
-
-    <h3 class="text-center">@lang('member/contracts/sp.a8', [], 'sk')</h3>
-    <span class="text-center">@lang('member/contracts/sp.a8b', [], 'sk')</span>
+    <h3 class="text-center">Článok VII - Opcia na kúpu akcií spoločnosti Podnikateľa
+        alebo spoločnosti Právneho nástupcu podnikateľa</h3>
+    <span class="text-center">(Zmluva o budúcej zmluve o kúpe akcií v spoločnosti Podnikateľa
+    alebo v spoločnosti Právneho nástupcu podnikateľa)</span>
 
 
     <ol>
         <li>@lang('member/contracts/sp.a81', ['shares' => number_format($objOrder->sp->shares, 2, ',', ' ')], 'sk')</li>
-        <li>@lang('member/contracts/sp.a82', [], 'sk')</li>
-        <li>@lang('member/contracts/sp.a83', [], 'sk')</li>
+        <li>Pre vylúčenie akýchkoľvek pochybností sa ustanovenie čl. VII bod 1 Zmluvy považuje za zmluvu o budúcej zmluve okúpe akcií spoločnosti Podnikateľa, ktorú uzatvorila spoločnosť CEE Real Estate Group s.r.o. s Tichým spoločníkom ako budúcim nadobúdateľom akcií spoločnosti Podnikateľa alebo zmluvu o budúcej zmluve o kúpe akcií spoločnosti. Právneho nástupcu podnikateľa, ktorú uzatvorila spoločnosť CEE Real Estate Group s.r.o. s Tichým spoločníkom ako budúcim nadobúdateľom akcií spoločnosti Právneho nástupcu podnikateľa.</li>
+        <li>V prípade, ak zo so strany Tichého spoločníka došlo k uplatneniu opcie na kúpu akcií v spoločnosti Podnikateľa, alebo v spoločnosti Právneho nástupcu podnikateľa podľa tohto článku Zmluvy, Kúpna cena za prevod akcií v spoločnosti. Podnikateľa, alebo Kúpna cena za prevod akcií za prevod akcií v spoločnosti Právneho nástupcu podnikateľa bude prevodcovi týchto akcií - spoločnosti CEE Real Estate Group s.r.o. uhradená z prostriedkov Vkladu, ktorý Tichý spoločník poukázal CEE Real Estate Group s.r.o. v súlade s čl. III bod 3 tejto Zmluvy. Pre vylúčenie pochybností CEE Real Estate Group s.r.o. má právo ponechať. si peňažné prostriedky zodpovedajúce výške Vkladu za účelom úhrady kúpnej ceny s čím Tichý spoločník súhlasí.</li>
     </ol>
 
 
 
-        <h3 class="text-center lang">Article VII <br>
-            Option to purchase shares of the Entrepreneur or Entrepreneur's Legal Successor <br>
-            (Future Share Purchase Agreement) <br>
-            in the Entrepreneur or Entrepreneur's Legal Successor)
-        </h3>
+    @if(App::getLocale() != 'sk')
+    <h3 class="text-center lang">@lang('member/contracts/sp.article7')</h3>
+    <span class="text-center lang">@lang('member/contracts/sp.article71')</span>
 
-        <ol class="lang">
-            <li>In the event that during the term of this Contract, the Entrepreneur’s company is transformed into a joint stock company and / or is merged with another trading company that is a joint-stock company, whose shareholder is CEE Real Estate Group s.r.o. (hereinafter referred to as “Legal Successor of the Entrepreneur"),”), but no later than December 31, 2022, the Silent Partner agrees that in the case of delivery of a written notice by CEE Real Estate Group s.r.o. as a shareholder of the Entrepreneur or shareholder of the Legal Successor of the Entrepreneur addressed to the Silent Partner to conclude a contract on the transfer of shares of the Entrepreneur or the Legal Successor of the Entrepreneur, it shall conclude with CEE Real Estate Group s.r.o. as a shareholder of the Entrepreneur, or a
-                shareholder of the Entrepreneur's Legal Successor within 10 days from the delivery of such a written notice an agreement on the transfer of shares of the Entrepreneur or Entrepreneur's Legal Successor the amount of which shall be {{ number_format($objOrder->sp->shares, 2, ',', ' ') }} % of the registered capital of the Entrepreneur or Entrepreneur's Legal Successor as of the day of its delivery to  CEE Real Estate Group s.r.o. as a shareholder of the Entrepreneur or Entrepreneur's Legal Successor for a fee equal to the amount of the silent partnership contribution under this Agreement"). The method of payment of the Purchase Price for the transfer of shares in the Entrepreneur's company or for the transfer of shares in the Entrepreneur's Legal Successor is set forth in par. 3 of this Article of the Agreement.
-            </li>
-            <li>In order to avoid any doubt, the provision of Art. VII, par. 1 of the Contract shall be deemed to constitute a future contract on the purchase of shares of the Entrepreneur concluded between CEE Real Estate Group s.r.o. and the silent partner as the future acquirer of the Entrepreneur's shares or a future contract on the purchase of shares of the Legal Successor of the Entrepreneur concluded between CEE Real Estate Group s.r.o. and the silent partner as the future acquirer of the shares of the Legal Successor of the Entrepreneur.</li>
-            <li>In the event that the Silent Partner exercised an option to purchase shares in the Entrepreneur or in the Entrepreneur's Legal Successor under this Article of the Agreement, the Purchase Price for the transfer of shares in the Entrepreneur, or the Purchase Price for the transfer of shares in the Legal successor of the Entrepreneur will be paid to the transferor of these shares - CEE Real Estate Group s.r.o. from the funds deposited by the Silent partner to CEE Real Estate Group s.r.o. in accordance with Art. III, par. 3 of this Agreement. For the avoidance of doubt, CEE Real Estate Group s.r.o. has the right to retain funds corresponding to the amount of the contribution for the purpose of paying the Purchase Price with which the Silent partner agrees.</li>
-        </ol>
-
-
-    {{--END New version silent partner--}}
-
-
-    <h3 class="text-center">@lang('member/contracts/sp.a7', [], 'sk')</h3>
-
-    <ol>
-        <li>@lang('member/contracts/sp.a71', [], 'sk')</li>
-
-        <li>@lang('member/contracts/sp.32', [], 'sk')</li>
-
-        <li>@lang('member/contracts/sp.33', [], 'sk')</li>
-
-        <li>@lang('member/contracts/sp.34', [], 'sk')</li>
-
-        <li>@lang('member/contracts/sp.35', [], 'sk')</li>
-
-        <li>@lang('member/contracts/sp.36', [], 'sk')</li>
+    <ol class="lang">
+        <li>@lang('member/contracts/sp.article72', ['shares' => number_format($objOrder->sp->shares, 2, ',', ' ')])</li>
+        <li>@lang('member/contracts/sp.article73')</li>
+        <li>@lang('member/contracts/sp.article74')</li>
     </ol>
+    @endif
 
+    {{--Preambula 8 --}}
+        <h3 class="text-center">Článok VIII - Záverečné ustanovenia</h3>
 
-        <h3 class="text-center lang">Article VIII <br>
-            Final provisions</h3>
-
-        <ol class="lang">
-            <li>CEE Real Estate Group s.r.o. is authorized to dispose of the funds representing the contribution which the Silent partner has made in accordance with Art. III, par. 3 of this Agreement at its sole discretion, until such time as, in accordance with this Agreement, CEE Real Estate Group s.r.o. is to use the funds in question for the purpose set forth in this Agreement.</li>
-
-            <li>Relations between the Parties not governed by the Agreement shall be governed by the relevant provisions of the Commercial Code and other applicable legal regulations.</li>
-
-            <li>Agreement shall enter into force and effect on the date of its signature by both Parties.</li>
-
-            <li>Any changes to the Agreement may only be made by written agreement of the Parties in the form of written amendments signed by both Parties.</li>
-
-            <li>The contract is made in 2 counterparts, each of which has the validity of the original. Each Contracting Party shall receive one counterpart.</li>
-            <li>The Parties declare that they have read this Agreement, have fully understood its content, it has been written on the basis of their free will, that its text is an understandable expression of their free and seriously expressed will that they do not enter into they attach their signatures to the sign of consent.</li>
+        <ol>
+            <li>CEE Real Estate Group s.r.o. je oprávnený nakladať s peňažnými prostriedkami predstavujúcimi Vklad, ktorý Tichý spoločník vložil v súlade s čl. III bod 3 podľa vlastného uváženia do momentu kým ich v súlade s touto Zmluvou nemá použiť na účel stanovený v tejto Zmluve.</li>
+            <li>Vzťahy Zmluvných strán, ktoré Zmluva neupravuje, sa riadia príslušnými ustanoveniami Obchodného zákonníka a ostatných platných právnych predpisov.</li>
+            <li>Zmluva nadobúda platnosť a účinnosť dňom jej podpísania obomi Zmluvnými stranami.</li>
+            <li>Akékoľvek zmeny Zmluvy je možné vykonať výlučne na základe písomnej dohody Zmluvných strán formou písomných dodatkov podpísaných oboma Zmluvnými stranami.</li>
+            <li>Zmluva je vyhotovená v 2 rovnopisoch, z ktorých každý má platnosť originálu. Každá zo zmluvných strán dostane jeden rovnopis.</li>
+            <li>Zmluvné strany vyhlasujú, že si túto Zmluvu prečítali, jej obsahu plne porozumeli, táto bola spísaná na základe ich slobodnej vôle, že jej text je zrozumiteľným vyjadrením ich slobodne a vážne prejavenej vôle, že Zmluvu neuzatvárajú v tiesni ani za jednostranne výhodných podmienok a na znak súhlasu pripájajú svoje podpisy.</li>
         </ol>
+
+
+    @if(App::getLocale() != 'sk')
+    <h3 class="text-center">@lang('member/contracts/sp.article8')</h3>
+    <ol class="lang">
+        <li>@lang('member/contracts/sp.article81')</li>
+        <li>@lang('member/contracts/sp.article82')</li>
+        <li>@lang('member/contracts/sp.article83')</li>
+        <li>@lang('member/contracts/sp.article84')</li>
+        <li>@lang('member/contracts/sp.article85')</li>
+        <li>@lang('member/contracts/sp.article86')</li>
+    </ol>
+    @endif
 
 
     <table class="signatures">

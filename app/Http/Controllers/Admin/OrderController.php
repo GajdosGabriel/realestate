@@ -32,11 +32,22 @@ class OrderController extends Controller {
     // Soft deleting Order, only SP
     public function delete(Order $order) {
         if(isset($order->sp)) {
+            // Update user profila
+            $order->user->update(['step' => 1]);
             $order->sp->delete();
             $order->delete();
             flash('Order was successfully deleted.')->success();
         } else {
             flash('You can delete only SP orders.')->error();
+        }
+
+        if(isset($order->pr)) {
+            // Update user profila
+            $order->pr->delete();
+            $order->delete();
+            flash('Order was successfully deleted.')->success();
+        } else {
+            flash('You can delete only PR orders.')->error();
         }
         return redirect('admin');
     }

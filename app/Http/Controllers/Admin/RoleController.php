@@ -13,7 +13,7 @@ class RoleController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $arrRoles = Role::whereNotIn('id', [41])->orderBy('name')->withCount('users')->get();
+        $arrRoles = Role::orderBy('name')->withCount('users')->get();
 
         $objChart = new RolesChart($arrRoles->sortBy('users_count')->reverse());
 

@@ -8,9 +8,9 @@
 
         <p>@lang('member/partner/marketing.text')</p>
 
-        <p>@lang('member/partner/marketing.text2')</p>
+        {{--<p>@lang('member/partner/marketing.text2')</p>--}}
 
-        <p>@lang('member/partner/marketing.text3')</p>
+        {{--<p>@lang('member/partner/marketing.text3')</p>--}}
 
         <h3>@lang('member/partner/marketing.link')</h3>
 
@@ -21,105 +21,105 @@
         @endif
     </div>
 
-    <div class="container-fluid bg_secondary xs-pt-20 xs-pb-20">
-        <div class="container">
-            <h3>@lang('member/partner/marketing.banners')</h3>
+    {{--<div class="container-fluid bg_secondary xs-pt-20 xs-pb-20">--}}
+        {{--<div class="container">--}}
+            {{--<h3>@lang('member/partner/marketing.banners')</h3>--}}
 
         {{--HTML banners --}}
-            <div class="row">
-                <div class="col-12 col-lg-4 d-flex flex-column align-items-start">
-                    <h5 class="w-100 text-center">@lang('member/partner/marketing.html')</h5>
+            {{--<div class="row">--}}
+                {{--<div class="col-12 col-lg-4 d-flex flex-column align-items-start">--}}
+                    {{--<h5 class="w-100 text-center">@lang('member/partner/marketing.html')</h5>--}}
 
-                    @if(App::getLocale() == 'sk')
-                        <iframe src="https://banners.cee-realestate.com/sirava2/sk/300x250/index.html" width="300" height="250" class="d-block mx-auto xs-mb-20" frameborder="0"></iframe>
-                    @else
-                        <iframe src="https://banners.cee-realestate.com/sirava2/300x250/index.html" width="300" height="250" class="d-block mx-auto xs-mb-20" frameborder="0"></iframe>
-                    @endif
+                    {{--@if(App::getLocale() == 'sk')--}}
+                        {{--<iframe src="https://banners.cee-realestate.com/sirava2/sk/300x250/index.html" width="300" height="250" class="d-block mx-auto xs-mb-20" frameborder="0"></iframe>--}}
+                    {{--@else--}}
+                        {{--<iframe src="https://banners.cee-realestate.com/sirava2/300x250/index.html" width="300" height="250" class="d-block mx-auto xs-mb-20" frameborder="0"></iframe>--}}
+                    {{--@endif--}}
 
-                    <a href="{{ route('member.partner.marketing-materials.html-banners') }}" class="btn btn-primary btn-block mt-auto xs-mb-20 lg-mb-0">@lang('member/partner/marketing.allHTML')</a>
-                </div>
+                    {{--<a href="{{ route('member.partner.marketing-materials.html-banners') }}" class="btn btn-primary btn-block mt-auto xs-mb-20 lg-mb-0">@lang('member/partner/marketing.allHTML')</a>--}}
+                {{--</div>--}}
 
-                <div class="col-12 col-lg-4 d-flex flex-column align-items-start">
-                    <h5 class="w-100 text-center">@lang('member/partner/marketing.fb')</h5>
+                {{--<div class="col-12 col-lg-4 d-flex flex-column align-items-start">--}}
+                    {{--<h5 class="w-100 text-center">@lang('member/partner/marketing.fb')</h5>--}}
 
-                    @if(App::getLocale() == 'sk')
-                        <img src="{{ asset('banners/fb/sk/sirava2.jpg') }}" class="img-fluid d-block mx-auto xs-mb-20" alt="">
-                    @else
-                        <img src="{{ asset('banners/fb/sirava2.jpg') }}" class="img-fluid d-block mx-auto xs-mb-20" alt="">
-                    @endif
+                    {{--@if(App::getLocale() == 'sk')--}}
+                        {{--<img src="{{ asset('banners/fb/sk/sirava2.jpg') }}" class="img-fluid d-block mx-auto xs-mb-20" alt="">--}}
+                    {{--@else--}}
+                        {{--<img src="{{ asset('banners/fb/sirava2.jpg') }}" class="img-fluid d-block mx-auto xs-mb-20" alt="">--}}
+                    {{--@endif--}}
 
-                    <a href="{{ route('member.partner.marketing-materials.fb-banners') }}" class="btn btn-primary btn-block mt-auto xs-mb-20 lg-mb-0">@lang('member/partner/marketing.allFB')</a>
-                </div>
+                    {{--<a href="{{ route('member.partner.marketing-materials.fb-banners') }}" class="btn btn-primary btn-block mt-auto xs-mb-20 lg-mb-0">@lang('member/partner/marketing.allFB')</a>--}}
+                {{--</div>--}}
 
-                <div class="col-12 col-lg-4 d-flex flex-column align-items-start">
-                    <h5 class="w-100 text-center">@lang('member/partner/marketing.email')</h5>
+                {{--<div class="col-12 col-lg-4 d-flex flex-column align-items-start">--}}
+                    {{--<h5 class="w-100 text-center">@lang('member/partner/marketing.email')</h5>--}}
 
-                    <img src="{{ asset('images/member/email_templates/1.jpg') }}" class="img-fluid d-block mx-auto xs-mb-20" alt="">
+                    {{--<img src="{{ asset('images/member/email_templates/1.jpg') }}" class="img-fluid d-block mx-auto xs-mb-20" alt="">--}}
 
-                    <a href="{{ route('member.partner.email-banner', ['id' => 1]) }}" class="btn btn-primary btn-block mt-auto" target="_blank">@lang('member/partner/marketing.email2')</a>
-                </div>
-            </div>
-        </div>
-    </div>
+                    {{--<a href="{{ route('member.partner.email-banner', ['id' => 1]) }}" class="btn btn-primary btn-block mt-auto" target="_blank">@lang('member/partner/marketing.email2')</a>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
 
-    <div class="container xs-pt-20 xs-pb-20">
-        <h3>@lang('member/partner/marketing.videos')</h3>
+    {{--<div class="container xs-pt-20 xs-pb-20">--}}
+        {{--<h3>@lang('member/partner/marketing.videos')</h3>--}}
 
-        <div class="row">
-            <div class="col-12 col-lg-6">
-                <h5 class="text-center">@lang('member/partner/marketing.drone')</h5>
+        {{--<div class="row">--}}
+            {{--<div class="col-12 col-lg-6">--}}
+                {{--<h5 class="text-center">@lang('member/partner/marketing.drone')</h5>--}}
 
-                @include('includes/videos/marketing/drone')
+                {{--@include('includes/videos/marketing/drone')--}}
 
-                <p class="xs-mt-20">Youtube URL link:</p>
+                {{--<p class="xs-mt-20">Youtube URL link:</p>--}}
 
-                <pre class="url">{{ 'https://youtu.be/9nPv9oWDS8M' }}</pre>
+                {{--<pre class="url">{{ 'https://youtu.be/9nPv9oWDS8M' }}</pre>--}}
 
-                <p>Embed:</p>
+                {{--<p>Embed:</p>--}}
 
-                <pre class="url">{{ '<iframe width="560" height="315" src="https://www.youtube.com/embed/9nPv9oWDS8M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' }}</pre>
+                {{--<pre class="url">{{ '<iframe width="560" height="315" src="https://www.youtube.com/embed/9nPv9oWDS8M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' }}</pre>--}}
 
-                <div class="text-center">
-                    <a href="{{ asset('videos/marketing/drone.mp4') }}" class="btn btn-primary xs-mb-20 lg-mb-0" download>@lang('member/partner/marketing.downloadVideo')</a>
-                </div>
-            </div>
+                {{--<div class="text-center">--}}
+                    {{--<a href="{{ asset('videos/marketing/drone.mp4') }}" class="btn btn-primary xs-mb-20 lg-mb-0" download>@lang('member/partner/marketing.downloadVideo')</a>--}}
+                {{--</div>--}}
+            {{--</div>--}}
 
-            <div class="col-12 col-lg-6">
-                <h5 class="text-center">@lang('member/partner/marketing.park')</h5>
+            {{--<div class="col-12 col-lg-6">--}}
+                {{--<h5 class="text-center">@lang('member/partner/marketing.park')</h5>--}}
 
-                @include('includes/videos/marketing/park')
+                {{--@include('includes/videos/marketing/park')--}}
 
-                <p class="xs-mt-20">Youtube URL link:</p>
+                {{--<p class="xs-mt-20">Youtube URL link:</p>--}}
 
-                <pre class="url">{{ 'https://youtu.be/Oqdwh3e12TU' }}</pre>
+                {{--<pre class="url">{{ 'https://youtu.be/Oqdwh3e12TU' }}</pre>--}}
 
-                <p>Embed:</p>
+                {{--<p>Embed:</p>--}}
 
-                <pre class="url">{{ '<iframe width="560" height="315" src="https://www.youtube.com/embed/Oqdwh3e12TU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' }}</pre>
+                {{--<pre class="url">{{ '<iframe width="560" height="315" src="https://www.youtube.com/embed/Oqdwh3e12TU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' }}</pre>--}}
 
-                <div class="text-center">
-                    <a href="{{ asset('videos/marketing/park.mp4') }}" class="btn btn-primary xs-mb-20 lg-mb-0" download>@lang('member/partner/marketing.downloadVideo')</a>
-                </div>
-            </div>
-        </div>
-    </div>
+                {{--<div class="text-center">--}}
+                    {{--<a href="{{ asset('videos/marketing/park.mp4') }}" class="btn btn-primary xs-mb-20 lg-mb-0" download>@lang('member/partner/marketing.downloadVideo')</a>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
 
-    <div class="container-fluid bg_secondary xs-pt-20 xs-pb-20">
-        <div class="container">
-            <h3>@lang('member/partner/marketing.fb2')</h3>
+    {{--<div class="container-fluid bg_secondary xs-pt-20 xs-pb-20">--}}
+        {{--<div class="container">--}}
+            {{--<h3>@lang('member/partner/marketing.fb2')</h3>--}}
 
 {{--            @if(App::getLocale() == 'sk')--}}
 {{--                <img src="{{ asset('images/member/fb_campaigns/sirava_sk.jpg') }}" class="img-fluid d-block mx-auto img-thumbnail xs-mb-20 lg-mb-0" alt="">--}}
             {{--@else--}}
-                <img src="{{ asset('images/member/fb_campaigns/sirava_en.jpg') }}" class="img-fluid d-block mx-auto img-thumbnail xs-mb-20 lg-mb-0" alt="">
+                {{--<img src="{{ asset('images/member/fb_campaigns/sirava_en.jpg') }}" class="img-fluid d-block mx-auto img-thumbnail xs-mb-20 lg-mb-0" alt="">--}}
             {{--@endif--}}
-        </div>
-    </div>
+        {{--</div>--}}
+    {{--</div>--}}
 
-    <div class="container xs-pt-20 xs-pb-20">
-        <h3>@lang('member/partner/marketing.lp')</h3>
+    {{--<div class="container xs-pt-20 xs-pb-20">--}}
+        {{--<h3>@lang('member/partner/marketing.lp')</h3>--}}
 
-        <iframe src="https://lp.cee-realestate.com/Linked-In" frameborder="1" width="100%" height="600px"></iframe>
+        {{--<iframe src="https://lp.cee-realestate.com/Linked-In" frameborder="1" width="100%" height="600px"></iframe>--}}
 
 
     {{--@if(App::getLocale() == 'sk')--}}
@@ -127,5 +127,13 @@
         {{--@else--}}
             {{--<iframe src="https://lp.cee-realestate.com/slovakia-en" frameborder="1" width="100%" height="600px"></iframe>--}}
         {{--@endif--}}
+    {{--</div>--}}
+
+
+    <div class="container-fluid bg_secondary xs-pt-20 xs-pb-20">
+        <div class="container">
+        <h3>@lang('member/partner/marketing.member-panel')</h3>
+            <img src="{{ asset('images/member/marketing-materials/member-panel_'. App::getLocale() .'.PNG') }}" class="img-fluid d-block mx-auto img-thumbnail xs-mb-20 lg-mb-0" alt="">
+        </div>
     </div>
 @endsection

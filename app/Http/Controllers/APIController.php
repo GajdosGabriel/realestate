@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\RegisterMail;
 use Illuminate\Http\Request;
 use App\User;
 use App\Classes\Validators\APIValidator;
@@ -10,6 +11,7 @@ use App\Classes\iContact;
 use App\Classes\Country;
 use Intervention\Image\Facades\Image;
 use App\Article;
+use Mail;
 
 class APIController extends Controller {
     public function user(Request $objRequest) {
@@ -47,6 +49,8 @@ class APIController extends Controller {
         else $arrData['country'] = Country::countryNameToISO3($arrData['country']);
 
         $objUser = User::create($arrData);
+
+
 
         if ($objUser->id > 0) {
 

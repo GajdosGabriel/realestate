@@ -29,7 +29,7 @@
                 <div class="text-center xs-mt-20">
                     <a href="{{ route('member.home') }}" class="btn btn-secondary">@lang('public/nav.home')</a>
 
-                    <a href="https://www.einpresswire.com/newsroom/cee_real_estate_group_newsroom/?n=2" class="btn btn-primary" target="_blank">@lang('member/news.press')</a>
+                    {{--<a href="https://www.einpresswire.com/newsroom/cee_real_estate_group_newsroom/?n=2" class="btn btn-primary" target="_blank">@lang('member/news.press')</a>--}}
                 </div>
             </div>
         </div>

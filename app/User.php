@@ -7,9 +7,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
 use Lab404\Impersonate\Models\Impersonate;
 use App\Notifications\ResetPassword;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable {
-    use HasRoles, Notifiable, Impersonate;
+    use HasRoles, Notifiable, Impersonate, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -147,15 +148,10 @@ class User extends Authenticatable {
         return $this->hasOne(Pep::class);
     }
 
-//    Skúška ignorovaný user
-//    public static function ignoredUser(){
-//        $users = User::role(['agent', 'admin', 'super admin'])->get();
-//
-//       foreach($users as $user) {
-//          $xx[] = $user->id;
-//       }
-//        return $xx;
-//    }
+        // Ignored user for admin statistic ID 41
+    public function scopeIgnoredUser($query){
+        return $query->role('staff')->pluck('id');
+    }
 
 
 }

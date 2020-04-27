@@ -5,9 +5,10 @@
 @section('content')
     @include('public/blocks/home')
 
-    @include('public/blocks/project')
+    @include('public/blocks/video')
+    {{--  @include('public/blocks/project')--}}
 
-    @include('public/blocks/login')
+   {{-- @include('public/blocks/login')--}}
 
     @include('public/blocks/about')
 

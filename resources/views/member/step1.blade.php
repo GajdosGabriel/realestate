@@ -48,15 +48,15 @@
             @csrf
 
             <ul class="nav nav-tabs nav-justified" id="step1Tablist" role="tablist">
-                {{--<li class="nav-item">--}}
-                    {{--<a class="nav-link active" id="pr-link" data-toggle="tab" href="#pr-tab" role="tab" aria-controls="pr-tab" aria-selected="true">--}}
-                       {{--@lang('member/invest/step1.pr') <span class="popover-info" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="@lang('member/invest/step1.pri')"><i class="fas fa-info-circle"></i></span>--}}
-                    {{--</a>--}}
-                {{--</li>--}}
+                <li class="nav-item">
+                    <a class="nav-link" id="pr-link" data-toggle="tab" href="#pr-tab" role="tab" aria-controls="pr-tab" aria-selected="true">
+                       @lang('member/invest/step1.pr') <span class="popover-info" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="@lang('member/invest/step1.pri')"><i class="fas fa-info-circle"></i></span>
+                    </a>
+                </li>
 
                 <li class="nav-item">
                     <a class="nav-link active" id="sp-link" data-toggle="tab" href="#sp-tab" role="tab" aria-controls="sp" aria-selected="false">
-                    {{--<a class="nav-link{{ (!in_array(Auth::user()->id, config('cee.pr_clients'))) ? ' active' : '' }}" id="sp-link" data-toggle="tab" href="#sp-tab" role="tab" aria-controls="sp" aria-selected="false">--}}
+{{--                    <a class="nav-link{{ (!in_array(Auth::user()->id, config('cee.pr_clients'))) ? ' active' : '' }}" id="sp-link" data-toggle="tab" href="#sp-tab" role="tab" aria-controls="sp" aria-selected="false">--}}
                         @lang('member/invest/step1.sp') <span class="popover-info" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="@lang('member/invest/step1.spi')"><i class="fas fa-info-circle"></i></span>
                     </a>
                 </li>
@@ -68,19 +68,25 @@
                 {{--</li>--}}
             </ul>
 
-            @if(in_array(Auth::user()->id, config('cee.pr_clients')))
-                <input class="d-none" type="radio" name="type" id="pr" value="pr" checked>
-                <input class="d-none" type="radio" name="type" id="sp" value="sp">
-            @else
-                <input class="d-none" type="radio" name="type" id="sp" value="sp" checked>
-            @endif
-            <input class="d-none" type="radio" name="type" id="tdo" value="tdo">
+            {{-- For PS version --}}
+{{--                <input class="d-none" type="radio" name="type" id="pr" value="pr" checked>--}}
 
-            <input type="hidden" name="tdo[project]" value="1" readonly>
+
+
+
+                {{-- For SP version uncoment all and comment PS--}}
+{{--            @if(in_array(Auth::user()->id, config('cee.pr_clients')))--}}
+                <input class="d-none" type="radio" name="type" id="pr" value="pr" >
+                <input class="d-none" type="radio" name="type" id="sp" value="sp" checked>
+{{--            @else--}}
+{{--                <input class="d-none" type="radio" name="type" id="sp" value="sp" checked>--}}
+{{--            @endif--}}
+{{--            <input class="d-none" type="radio" name="type" id="tdo" value="tdo">--}}
+{{--            <input type="hidden" name="tdo[project]" value="1" readonly>--}}
             <input type="hidden" name="sp[project]" value="1" readonly>
 
             <div class="tab-content" id="step1TabContent">
-{{--                @include('member/includes/step1/pr')--}}
+                @include('member/includes/step1/pr')
 
                 @include('member/includes/step1/sp')
 

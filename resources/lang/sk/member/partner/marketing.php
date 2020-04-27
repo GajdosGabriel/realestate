@@ -22,6 +22,7 @@ return [
     'allHTML' => 'Všetky HTML bannery',
     'allFB' => 'Všetky Facebook bannery',
     'email2' => 'Celá šablóna',
-    'back' => 'Späť na Marketingové materiály'
+    'back' => 'Späť na Marketingové materiály',
+    'member-panel' => 'CEE členská zóna'
 
 ];

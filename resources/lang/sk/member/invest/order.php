@@ -9,7 +9,7 @@ return [
     'projectName' => 'Názov projektu:',
     'location' => 'Poloha:',
     'investment' => 'Investícia celkom:',
-    'ceeShares' => 'Podiel CEE:',
+    'ceeShares' => 'Širava Park s.r.o. podiely:',
     'yourShares' => 'Váš podiel:',
     'yourInvestment' => 'Vaša investícia:',
     'duration' => 'Trvanie:',

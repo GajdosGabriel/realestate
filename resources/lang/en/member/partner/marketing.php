@@ -22,6 +22,7 @@ return [
     'allHTML' => 'See all HTML banners',
     'allFB' => 'See all Facebook banners',
     'email2' => 'See whole template',
-    'back' => 'Back to Marketing materials'
+    'back' => 'Back to Marketing materials',
+    'member-panel' => 'CEE member area'
 
 ];

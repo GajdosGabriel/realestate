@@ -72,7 +72,17 @@
 
                         <h2 class="color_primary">{{ $objUser->name }} {{ $objUser->surname }}</h2>
 
-                        <p><strong>ID:</strong> {{ $objUser->id }}</p>
+                        <p class="d-flex justify-content-between align-items-center">
+                            <span>
+                                <strong>ID:</strong> {{ $objUser->id }}
+                            </span>
+
+                            @role('admin')
+                            <a href="#" data-toggle="modal" data-target="#delete">
+                                <i class="far fa-trash-alt"></i>
+                            </a>
+                            @endrole
+                        </p>
 
                         @if($objUser->referral_id != null)<p><strong>Referral:</strong> <a href="{{ route('admin.users.user', ['id' => $objUser->referral_id]) }}">{{ $objUser->referral->name }} {{ $objUser->referral->surname }}</a></p>@endif
 
@@ -229,6 +239,12 @@
             </div>
         </div>
     </div>
+
+    @component('components.modal.delete')
+    @slot('bodyText') Do you really want to delete <strong>{{ $objUser->name }} {{ $objUser->surname }}</strong> @endslot
+    @slot('actionLink') {{ route('admin.users.delete', [$objUser->id])  }} @endslot
+    @endcomponent
+
 @endsection
 
 @section('addJS')

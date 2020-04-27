@@ -65,7 +65,7 @@ return [
     'company_next' => '(ďalej len „CEE Real Estate Group s.r.o.”)',
     'company_how' => 'spolu ďalej aj ako „Zmluvné strany“',
     '2_2' => 'Tichý spoločník sa zaväzuje poskytnúť Podnikateľovi peňažný vklad vo výške :amount EUR (ďalej len „Vklad“).',
-    '2_3' => 'Tichý spoločník sa zväzuje poskytnúť Podnikateľovi Vklad podľa bodu 2 tohto článku Zmluvy tým, že peňažné prostriedky zodpovedajúce výške vkladu poukáže najneskôr do 3 pracovných dní odo dňa podpisu tejto Zmluvy na bankový účet CEE Real Estate Group s.r.o. IBAN: SK91 7500 0000 0040 2601 5125, ktorý je platobným miestom stanoveným Podnikateľom touto Zmluvou za účelom odovzdania Vkladu Podnikateľovi.',
+    '2_3' => 'Tichý spoločník sa zväzuje poskytnúť Podnikateľovi Vklad podľa bodu 2 tohto článku Zmluvy tým, že peňažné prostriedky zodpovedajúce výške vkladu poukáže najneskôr do 3 pracovných dní odo dňa podpisu tejto Zmluvy na bankový účet CEE Real Estate Group s.r.o. IBAN: SK91 7500 0000 0040 2612 5125, ktorý je platobným miestom stanoveným Podnikateľom touto Zmluvou za účelom odovzdania Vkladu Podnikateľovi.',
     '2_4' => 'CEE Real Estate Group s.r.o sa zaväzuje odovzdať Vklad Podnikateľovi najneskôr dňa 31.12. 2022 v prípade, ak dovtedy nedôjde k prevodu akcií spoločnosti Podnikateľa, alebo spoločnosti Právneho nástupcu podnikateľa na Tichého spoločníka. Predmetom tejto Zmluvy je súčasne zväzok uzatvoriť zmluvu o budúcej zmluve o kúpe akcií Podnikateľa za podmienok stanovených v čl. VII tejto  Zmluvy.',
 
 ];

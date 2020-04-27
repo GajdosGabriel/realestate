@@ -21,7 +21,7 @@ return [
     'joint' => 'Joint details',
     'expected' => 'Expected ROI',
     'available' => 'Available investment:',
-    'this' => 'This will represent :shares shares.',
+    'this' => 'This will represent :shares shares of Širava Development s.r.o.',
     'ceeShares' => 'CEE shares:',
     'reservedShares' => 'Reserved shares:',
     'availableShares' => 'Available shares:',
@@ -35,9 +35,9 @@ return [
     'text2' => '500.000 visitors are to be expected each season with an average spending of € 10 per visitor.',
     'text3' => 'Expected profit per season 2.5 million net after tax. This is approx. 25% ROI per year. This represents 25 000 Euro return per years per share (100 000 Euro) invested for 24 years long.',
     'yearly_dividend' => 'Expected yearly dividend',
-    'description1' => 'One share represents € 150.000,- . Investment starts from € 15.000,- (0,10&nbsp;shares)',
-    'description2' => '500.000,- visitors are to be expected each season with average spending of € 10,- per visitor.',
-    'description2a' => '300 sleeping accommodations will be built and rent out each season.',
-    'description3' => 'Expected ROI is approx. 25% per year. Dividend will be paid out yearly for 24 years.',
+    'description1' => 'One share represents €150.000,- . Investment starts from €15.000,- (0,10&nbsp;shares)',
+    'description2' => 'We use 2.500.000,- Euro to build Šírava Park Boulevard with all business.',
+    'description3' => 'We use 1.500.000,- Euro to build Šírava Park Glamping.',
+    'description4' => 'Expected ROI is 25-40% per year. Dividend will be paid out yearly for 24 years. (example calculations are based on 25% ROI)',
 
 ];

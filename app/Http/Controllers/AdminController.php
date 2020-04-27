@@ -70,14 +70,14 @@ class AdminController extends Controller {
 
         // Recent logins
         $arrRecentLogins = UserActivity::where('activity_id', 1)
-            ->whereNotIn('user_id', config('cee.ignored_users'))
+            ->whereNotIn('user_id', User::ignoredUser())
             ->orderBy('id', 'DESC')
             ->limit(40)
             ->with(['user.referral', 'user.roles', 'user.note'])
             ->get();
 
         // Roles
-        $arrRoles = Role::whereNotIn('id', [1, 2, 4, 12, 41])
+        $arrRoles = Role::whereNotIn('id', [1, 2, 4, 12])
             ->orderBy('name')
             ->withCount('users')
             ->get();

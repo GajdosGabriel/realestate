@@ -16,11 +16,16 @@
     <div class="container project-details xs-mt-20">
         @if(App::getLocale() == 'sk')
             @for($i = 1; $i <= $filesCount; $i++)
-                <img src="{{ asset('images/member/business_plan_sk/business_plan_boulevard_sk-' . sprintf('%03d', $i) . '.jpg') }}" class="img-fluid d-block mx-auto xs-mb-20" alt="">
+                <img src="{{ asset('images/member/business_plan_sk/business_plan_boulevard_sk-' . sprintf('%d', $i) . '.jpg') }}" class="img-fluid d-block mx-auto xs-mb-20" alt="">
+            @endfor
+
+        @elseif(App::getLocale() == 'nl')
+            @for($i = 1; $i <= $filesCount; $i++)
+                <img src="{{ asset('images/member/business_plan_nl/business_plan_boulevard_nl-'.sprintf('%d', $i) . '.jpg') }}" class="img-fluid d-block mx-auto xs-mb-20" alt="">
             @endfor
         @else
             @for($i = 1; $i <= $filesCount; $i++)
-                <img src="{{ asset('images/member/business_plan/business_plan_boulevard_en-' . sprintf('%03d', $i) . '.jpg') }}" class="img-fluid d-block mx-auto xs-mb-20" alt="">
+                <img src="{{ asset('images/member/business_plan_en/business_plan_boulevard_en-'.sprintf('%d', $i) . '.jpg') }}" class="img-fluid d-block mx-auto xs-mb-20" alt="">
             @endfor
         @endif
 

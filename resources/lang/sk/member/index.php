@@ -12,13 +12,13 @@ return [
     '5b' => 'Ako investovať a vypočítať zisk',
     '6' => 'Pozrite si naše videá',
     '7b' => 'Objednanie a sledovanie investície',
-    'droneVideo' => 'Video z dronu',
+    'droneVideo' => 'Video o spoločnosti',
     'parkVideo' => 'Video parku',
     'location' => 'Lokácia',
     'renovations' => 'Prečo investovať do renovačných projektov?',
     'how' => 'Ako to funguje',
     'watch' => 'Pozrieť video',
-    'ren2' => 'Združené zdroje od € 5 000',
+    'ren2' => 'Dlžobné úpisy od € 5 000',
     'track' => 'Realizované projekty',
     'bus' => 'Biznis plán'
 ];

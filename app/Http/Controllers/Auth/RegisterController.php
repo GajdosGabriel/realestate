@@ -55,6 +55,7 @@ class RegisterController extends Controller {
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data) {
+
         return Validator::make($data, [
             'full_name' => 'required|string|min:5|max:80',
             'registerEmail' => 'required|string|email|max:70|unique:users,email',
@@ -71,6 +72,9 @@ class RegisterController extends Controller {
      * @return \App\User
      */
     protected function create(array $data) {
+
+//        Spamovali nám prvá krajina preto Algeria 213
+        if($data['phone_code'] == 213 ) return abort(403);
 
         // Parse name & country
         $strName = explode(' ', $data['full_name'])[0] ?? '';

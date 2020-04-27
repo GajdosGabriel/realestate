@@ -5,7 +5,7 @@ return [
     '1' => 'Vyplňte údaje',
     '2' => 'Nahrajte dokumenty',
     '3' => 'Podrobnosti platby',
-    'pr' => 'Združené zdroje',
+    'pr' => 'Dlžobné úpisy',
     'tdo' => 'Podielnik',
     'sp' => 'Tiché Partnerstvo',
     'pri' => 'CEE vytvorila pre investorov, ktorí chcú do projektu investovať fixnú sumu, schému združených zdrojov. Schéma združených zdrojov je jednoduché riešenie ako získať pevný úrok 10, 11 alebo 12% ročne v horizonte 2, 3 alebo 4 rokov. Možnosti investície do združených zdrojov začínajú na sume 5 000 EUR a viac, úroky sa vyplácajú štvrťročne.',
@@ -21,7 +21,7 @@ return [
     'joint' => 'Spoločné údaje',
     'expected' => 'Očakávaná návratnosť',
     'available' => 'Dostupná investícia:',
-    'this' => 'Toto reprezentuje :shares podielov.',
+    'this' => 'Toto reprezentuje :shares podielov spoločnosti Šírava Development s.r.o.',
     'ceeShares' => 'CEE podiely:',
     'reservedShares' => 'Rezervované podiely:',
     'availableShares' => 'Dostupné podiely:',
@@ -34,9 +34,9 @@ return [
     'text4' => 'Jeden podiel predstavuje 100 000 EUR. Investícia začína od 10 000 EUR (0,10&nbsp;podielu).',
     'yearly_dividend' => 'Ročný výnos',
     'description1' => 'Jeden podiel predstavuje € 150.000,- . Investícia začína od € 15.000,- (0,10&nbsp;podielu)',
-    'description2' => 'Každú sezónu je očakávaných 500.000,- návštevníkov s priemernými výdavkami 10€ na jedného návštevníka.',
-    'description2a' => '300 ubytovacích kapacít bude vybudovaných a prenajímaných každú sezónu.',
-    'description3' => 'Očakávaná návratnosť je približne 25% za rok, dividendy budú vyplácané ročne po dobu 24 rokov.',
+    'description2' => '2.500.000,- Eur bude použitých na vybudovanie Šírava Park Boulevard so všetkými biznismi.',
+    'description3' => '1.500.000,- Eur bude použitých na vybudovanie Šírava Park Glamping.',
+    'description4' => 'Očakávaná návratnosť je 25-40% za rok. Dividendy budú vyplácané ročne po dobu 24 rokov. (príklady výpočtov sú založené na návratnosti investícií 25%)',
 
 
 

@@ -69,7 +69,8 @@
                     <div class="card-body">
                         <h3>@lang('member/invest/step1.sp')</h3>
 
-                        <img src="https://www.siravapark.com/images/sp/3.jpg" class="img-fluid d-block mx-auto xs-mb-20" alt="">
+{{--                        <img src="https://www.siravapark.com/images/sp/3.jpg" class="img-fluid d-block mx-auto xs-mb-20" alt="">--}}
+                        <img src="{{ asset('images/member/invest-v3.jpg') }}" class="img-fluid d-block mx-auto xs-mb-20" alt="">
 
                         <p><strong>@lang('member/invest/order.projectName')</strong> {{ $objOrder->sp->project->name }}</p>
 
@@ -131,25 +132,25 @@
 
                         <p class="font-montserrat">@lang('member/invest/step3.amount')</p>
 
-                        <p class="font-montserrat font-weight-bold">&euro; {{ number_format($objOrder->sp->investment, 2, ',', ' ') }}</p>
+                        <p class="font-montserrat font-weight-bold">&euro; {{ number_format($objOrder->sp->investment, 0, '', ' ') }}</p>
 
                         <p class="font-montserrat">@lang('member/invest/step3.reason')</p>
 
                         <p class="font-montserrat font-weight-bold">@lang('member/invest/step3.tdoReason') {{ $objOrder->id }}</p>
 
-                        <hr class="part primary">
+{{--                        <hr class="part primary">--}}
 
-                        <h3>@lang('member/invest/step3.credit')</h3>
+{{--                        <h3>@lang('member/invest/step3.credit')</h3>--}}
 
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                            <input type="hidden" name="cmd" value="_s-xclick">
+{{--                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">--}}
+{{--                            <input type="hidden" name="cmd" value="_s-xclick">--}}
 
-                            <input type="hidden" name="hosted_button_id" value="5PTNLZ5YEZGZ8">
+{{--                            <input type="hidden" name="hosted_button_id" value="5PTNLZ5YEZGZ8">--}}
 
-                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+{{--                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">--}}
 
-                            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                        </form>
+{{--                            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">--}}
+{{--                        </form>--}}
                     </div>
                 </div>
             </div>

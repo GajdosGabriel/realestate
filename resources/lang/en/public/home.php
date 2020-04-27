@@ -4,10 +4,10 @@ return [
 
     'mention' => 'As mentioned in:',
     'carousel' => [
-        '1' => 'CEE Real Estate Group is the main developer of Šírava Park Boulevard in Slovakia',
+        '1' => 'CEE is the main developer of Šírava Park',
         'button' => 'Explore our project',
-        '2' => 'with unique Aqua Park & Thermal Spa',
-        '3' => 'and future Lake Resort',
+        '2' => 'Šírava Park Boulevard',
+        '3' => 'Šírava Park Glamping',
     ]
 
 ];

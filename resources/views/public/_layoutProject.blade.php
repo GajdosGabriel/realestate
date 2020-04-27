@@ -15,7 +15,7 @@
         <div id="infobar" class="d-none d-lg-block">
             <div class="row">
                 <div class="col-8">
-                    <p>@lang('public/nav.call'): <span class="font-weight-bold color_primary">+421 233 056 141</span></p>
+                    <p>@lang('public/nav.call'): <span class="font-weight-bold color_primary">+421 (0)2 207 001 55</span></p>
                 </div>
 
                 <div class="col-4 text-right">
@@ -50,7 +50,7 @@
 
                     <li class="nav-item"><a class="nav-link" href="/#aboutBlock">@lang('public/nav.aboutUs')</a></li>
 
-                    <li class="nav-item"><a class="nav-link" href="/#newsBlock">@lang('public/nav.news')</a></li>
+{{--                    <li class="nav-item"><a class="nav-link" href="/#newsBlock">@lang('public/nav.news')</a></li>--}}
 
                     <li class="nav-item"><a class="nav-link" href="/#contactBlock">@lang('public/nav.contact')</a></li>
                 </ul>

@@ -14,6 +14,7 @@
         </div>
     </div>
 
+    {{--  Sekcia  1 --}}
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-8 offset-lg-2">
@@ -66,12 +67,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-
             </div>
 
 {{--            <div class="col-12 col-lg-8 offset-lg-2">--}}
@@ -106,7 +101,7 @@
 
 {{--                    <input type="text" class="form-control cal_roi" name="tdo[project][roi]" value="&euro; 3575" readonly>--}}
 {{--                </div>--}}
-{{--            </div>            --}}
+{{--            </div>--}}
 
 {{--            <div class="col-12 col-lg-6">--}}
 {{--                <p class="lead xs-mt-20">@lang('member/invest/step1.tdo')</p>--}}
@@ -148,6 +143,7 @@
         <p class="lead text-center xs-mt-20 xs-mb-20">@lang('member/how.text')</p>
     </div>
 
+    {{--  Sekcia  2 img --}}
     <div class="container-fluid bg_secondary xs-pt-20 xs-pb-20 lg-pb-50">
         <div class="row">
             <div class="col-12 col-lg-4">
@@ -187,10 +183,141 @@
                 @endif
             </div>
         </div>
+    </div>
+
+    {{--  Sekcia 3 --}}
+    <div class="container xs-pt-20 xs-pb-20 lg-pb-50">
+
+        <div class="col-12 col-lg-9 offset-lg-1">
+
+            {{-- Pool resources--}}
+            <h2 class="mt-4">@lang('member/how.pooled_resources')</h2>
+            <p>@lang('member/how.pooled_resources2')</p>
+
+
+            <hr class="part primary">
+
+            <h3 class="text-center">@lang('member/how.calc')</h3>
+            {{--CALCULATOR PR--}}
+            <div class="projectItem xs-mb-20 bg_secondary">
+                <div class="row">
+                    <div class="col">
+                        <div class="xs-p-10 calculator">
+                            <div class="tab-pane fade show calculator calculator-pr" id="pr-tab" role="tabpanel" aria-labelledby="pr-tab">
+                                <input type="hidden" class="cal_price" value="5000">
+                                <div class="row">
+                                    <div class="col-12 col-lg-8">
+                                        <div class="form-group">
+                                            <label for="pr_number" class="col-form-label">@lang('member/invest/pr.number')</label>
+
+                                            <input id="pr_number" type="number" class="form-control cal_number{{ $errors->has('pr.number') ? ' is-invalid' : '' }}" name="pr[number]" value="{{ old('pr.number') ?? 1 }}" min="1" step="1">
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-12 col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="" class="col-form-label">@lang('member/invest/pr.investment')</label>
+
+                                                    <input type="text" class="form-control cal_investment" value="&euro; 5 000" readonly>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="" class="col-form-label">@lang('member/invest/pr.interest')</label>
+
+                                                    <input type="text" class="form-control cal_profit" value="&euro; 1 000" readonly>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-12 col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="" class="col-form-label">@lang('member/invest/pr.quarterly')</label>
+
+                                                    <input type="text" class="form-control cal_quarterly" value="&euro; 125,00" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-lg-4">
+                                        <label for="">@lang('member/invest/pr.duration')</label>
+
+                                        <div class="custom-control custom-radio xs-mb-10">
+                                            <input class="custom-control-input cal_duration" type="radio" name="pr[duration]" id="pr1" value="2" checked>
+                                            <label class="custom-control-label" for="pr1">
+                                                @lang('member/invest/pr.2')
+                                            </label>
+                                        </div>
+
+                                        <div class="custom-control custom-radio xs-mb-10">
+                                            <input class="custom-control-input cal_duration" type="radio" name="pr[duration]" id="pr2" value="3">
+                                            <label class="custom-control-label" for="pr2">
+                                                @lang('member/invest/pr.3')
+                                            </label>
+                                        </div>
+
+                                        <div class="custom-control custom-radio">
+                                            <input class="custom-control-input cal_duration" type="radio" name="pr[duration]" id="pr3" value="4">
+                                            <label class="custom-control-label" for="pr3">
+                                                @lang('member/invest/pr.4')
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="part primary">
+                                <p class="lead text-center">@lang('member/invest/pr.pooled')</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{--  Sekcia  4 img --}}
+    <div class="container-fluid bg_secondary xs-pt-20 xs-pb-20 lg-pb-50">
+        <div class="row">
+            <div class="col-12 col-lg-4">
+                <h3 class="text-center color_primary">@lang('general.step') 1 <span class="popover-info" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="@lang('member/how.text2')"><i class="fas fa-info-circle"></i></span></h3>
+                <a href="{{ asset('images/member/screenshot_step1_full_pr_' . App::getLocale() . '.jpg') }}" data-lightbox="photos">
+                    <img src="{{ asset('images/member/screenshot_step1_pr_' . App::getLocale(). '.jpg') }}" class="img-fluid d-block mx-auto img-thumbnail xs-mb-20" alt="" data-aos="zoom-in">
+                </a>
+            </div>
+
+            <div class="col-12 col-lg-4">
+                <h3 class="text-center color_primary">@lang('general.step') 2 <span class="popover-info" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="@lang('member/how.text3')"><i class="fas fa-info-circle"></i></span></h3>
+
+                @if(App::getLocale() == 'sk')
+                    <a href="{{ asset('images/member/screenshot_step2_full_sk.jpg') }}" data-lightbox="photos">
+                        <img src="{{ asset('images/member/screenshot_step2_sk.jpg') }}" class="img-fluid d-block mx-auto img-thumbnail xs-mb-20" alt="" data-aos="zoom-in">
+                    </a>
+                @else
+                    <a href="{{ asset('images/member/screenshot_step2_full.jpg') }}" data-lightbox="photos">
+                        <img src="{{ asset('images/member/screenshot_step2.jpg') }}" class="img-fluid d-block mx-auto img-thumbnail xs-mb-20" alt="" data-aos="zoom-in">
+                    </a>
+                @endif
+            </div>
+
+            <div class="col-12 col-lg-4">
+                <h3 class="text-center color_primary">@lang('general.step') 3 <span class="popover-info" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="@lang('member/how.text4')"><i class="fas fa-info-circle"></i></span></h3>
+
+                @if(App::getLocale() == 'sk')
+                    <a href="{{ asset('images/member/screenshot_step3_full_sk.jpg') }}" data-lightbox="photos">
+                        <img src="{{ asset('images/member/screenshot_step3_sk.jpg') }}" class="img-fluid d-block mx-auto img-thumbnail" alt="" data-aos="zoom-in">
+                    </a>
+                @else
+                    <a href="{{ asset('images/member/screenshot_step3_full.jpg') }}" data-lightbox="photos">
+                        <img src="{{ asset('images/member/screenshot_step3.jpg') }}" class="img-fluid d-block mx-auto img-thumbnail" alt="" data-aos="zoom-in">
+                    </a>
+                @endif
+            </div>
+        </div>
+
 
         <div class="text-center xs-mt-20 lg-mt-50">
             <a href="{{ route('member.home') }}" class="btn btn-secondary">@lang('public/nav.home')</a>
-            
+
             <a href="{{ route('member.invest') }}" class="btn btn-primary">@lang('member/nav.invest')</a>
         </div>
     </div>

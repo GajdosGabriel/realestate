@@ -43,7 +43,7 @@
         <div id="infobar" class="d-none d-lg-block">
             <div class="row">
                 <div class="col-8">
-                    <p>@lang('public/nav.call'): <span class="font-weight-bold color_primary">+421 233 056 141</span></p>
+                    <p>@lang('public/nav.call'): <span class="font-weight-bold color_primary">+421 (0)2 207 001 55</span></p>
                 </div>
 
                 <div class="col-4 text-right">
@@ -80,6 +80,10 @@
 
                     @if(App::getLocale() != 'sk')
                         <li class="nav-item"><a class="nav-link" href="{{ route('public.lang', ['lang' => 'sk']) }}"><img src="{{ asset('images/flag_sk.png') }}" alt=""> <span class="d-lg-none">Slovensky</span></a></li>
+                    @endif
+
+                    @if(App::getLocale() != 'nl')
+                        <li class="nav-item"><a class="nav-link" href="{{ route('public.lang', ['lang' => 'nl']) }}"><img src="{{ asset('images/flag_nl.png') }}" alt=""> <span class="d-lg-none">Nederlands</span></a></li>
                     @endif
                 </ul>
             </div>

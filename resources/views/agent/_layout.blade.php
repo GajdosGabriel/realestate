@@ -70,11 +70,11 @@
                     </a>
 
                     <div class="dropdown-menu lang" aria-labelledby="navbarDropdown">
-                        @role('admin|super admin')
+                        @role('admin')
                             <a class="dropdown-item" href="{{ route('admin.home') }}">Admin area</a>
                         @endrole
 
-                        @role('marketing|super admin')
+                        @role('marketing')
                             <a class="dropdown-item" href="{{ route('marketing.home') }}">Marketing area</a>
                         @endrole
 

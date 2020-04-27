@@ -9,7 +9,7 @@ return [
     'projectName' => 'Project name:',
     'location' => 'Location:',
     'investment' => 'Total investment:',
-    'ceeShares' => 'CEE shares:',
+    'ceeShares' => 'Širava Park s.r.o. shares:',
     'yourShares' => 'Your shares:',
     'yourInvestment' => 'Your investment:',
     'duration' => 'Duration:',

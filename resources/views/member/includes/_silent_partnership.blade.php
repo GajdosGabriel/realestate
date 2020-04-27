@@ -7,3 +7,4 @@
 
 <strong>@lang('member/how.silent_partnership4')</strong>
 <p>@lang('member/how.silent_partnership5')</p>
+<p>@lang('member/how.silent_partnership6')</p>
