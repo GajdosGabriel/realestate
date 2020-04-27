@@ -56,6 +56,10 @@
                     <div class="card-body">
                         <ul class="nav nav-tabs xs-mb-20">
                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.sirava.index') }}">Domes leads</a>
+                            </li>
+
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.sirava.index') }}">Glamping leads</a>
                             </li>
 

@@ -74,7 +74,11 @@
                     <div class="card-body">
                         <ul class="nav nav-tabs xs-mb-20">
                             <li class="nav-item">
-                                <a class="nav-link active" href="">Glamping leads <span class="badge badge-secondary">{{ $objPaginator->total() }}</span></a>
+                                <a class="nav-link active" href="">Domes leads <span class="badge badge-secondary">{{ $objPaginator->total() }}</span></a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.sirava.glamping') }}">Glamping leads</a>
                             </li>
 
                             <li class="nav-item">
@@ -96,10 +100,11 @@
                                 <th>Name</th>
                                 <th>E-mail</th>
                                 <th>Phone</th>
+                                <th>Domes</th>
                                 <th>Interested in</th>
                                 <th>Rent / buy</th>
-                                <th>Buy from</th>
-                                <th>Buy to</th>
+{{--                                <th>Buy from</th>--}}
+{{--                                <th>Buy to</th>--}}
                                 <th>Rent from</th>
                                 <th>Rent to</th>
                                 <th>Comment</th>
@@ -116,8 +121,8 @@
                                     <td>{{ $lead['domes'] }}</td>
                                     <td>{{ $lead['estate'] }}</td>
                                     <td>{{ $lead['interested'] }}</td>
-                                    <td>{{ $lead['buy_from'] }}</td>
-                                    <td>{{ $lead['buy_to'] }}</td>
+{{--                                    <td>{{ $lead['buy_from'] }}</td>--}}
+{{--                                    <td>{{ $lead['buy_to'] }}</td>--}}
                                     <td>{{ $lead['rent_from'] }}</td>
                                     <td>{{ $lead['rent_to'] }}</td>
                                     <td>{{ $lead['comment'] }}</td>

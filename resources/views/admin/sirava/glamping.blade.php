@@ -11,6 +11,24 @@
                         <h3>Šírava Park</h3>
                     </div>
 
+                    <div class="item">
+                        <form action="" method="GET" class="form-inline cee">
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="search" placeholder="Search users" minlength="3" required>
+
+                                @if(isset($_GET['search']))
+                                    <div class="input-group-append">
+                                        <a href="{{ Request::url() }}" class="btn btn-outline-secondary" type="button"><i class="fas fa-times color_red"></i></a>
+                                    </div>
+                                @endif
+
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
                     <div class="float-right">
                         <div class="item">
                             {{ $objPaginator->links() }}
@@ -61,7 +79,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.sirava.index') }}">Glamping leads</a>
+                                <a class="nav-link active" href="">Glamping leads <span class="badge badge-secondary">{{ $objPaginator->total() }}</span></a>
                             </li>
 
                             <li class="nav-item">
@@ -69,7 +87,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link active" href="">Real Estate sign ups <span class="badge badge-secondary">{{ $objPaginator->total() }}</span></a>
+                                <a class="nav-link" href="{{ route('admin.sirava.re') }}">Real Estate sign ups</a>
                             </li>
 
                             <li class="nav-item">
@@ -83,8 +101,13 @@
                                 <th>Name</th>
                                 <th>E-mail</th>
                                 <th>Phone</th>
-                                <th>Real Estate</th>
-                                <th>Message</th>
+                                <th>Interested in</th>
+                                <th>Rent / buy</th>
+                                <th>Buy from</th>
+                                <th>Buy to</th>
+                                <th>Rent from</th>
+                                <th>Rent to</th>
+                                <th>Comment</th>
                                 <th>Created at</th>
                             </tr>
                             </thead>
@@ -95,8 +118,14 @@
                                     <td>{{ $lead['name'] }}</td>
                                     <td>{{ $lead['email'] }}</td>
                                     <td>{{ $lead['phone'] }}</td>
-                                    <td>{{ $lead['re'] }}</td>
-                                    <td>{{ $lead['message'] }}</td>
+                                    <td>{{ $lead['domes'] }}</td>
+                                    <td>{{ $lead['estate'] }}</td>
+                                    <td>{{ $lead['interested'] }}</td>
+                                    <td>{{ $lead['buy_from'] }}</td>
+                                    <td>{{ $lead['buy_to'] }}</td>
+                                    <td>{{ $lead['rent_from'] }}</td>
+                                    <td>{{ $lead['rent_to'] }}</td>
+                                    <td>{{ $lead['comment'] }}</td>
                                     <td>{{ date('j.n.Y H:i', strtotime($lead['created_at'])) }}</td>
                                 </tr>
                             @endforeach

@@ -295,6 +295,7 @@ Route::name('admin.')->middleware(['auth', 'checkAdmin', 'adminUpcomingReminders
 
     Route::name('sirava.')->prefix('/sirava')->group(function() {
         Route::get('/', 'Admin\SiravaController@index')->name('index');
+        Route::get('/glamping', 'Admin\SiravaController@glamping')->name('glamping');
         Route::get('/real-estate', 'Admin\SiravaController@re')->name('re');
         Route::get('/holiday', 'Admin\SiravaController@holiday')->name('holiday');
         Route::get('/thermal-spa', 'Admin\SiravaController@thermalSpa')->name('thermalSpa');

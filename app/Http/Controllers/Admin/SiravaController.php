@@ -34,6 +34,33 @@ class SiravaController extends Controller {
         ]);
     }
 
+    public function glamping() {
+
+        // Most visited pages
+        $objGuzzle = new GuzzleHttp\Client();
+        $objResponse = $objGuzzle->request('GET', 'https://www.siravapark.com/api/activity');
+        $arrData = json_decode($objResponse->getBody(), true);
+        $arrChartData = collect($arrData)->mapWithKeys(function ($item) {
+            return [$item['page']['name'] => $item['count']];
+        });
+        $objChart = new MostVisitedPagesChart($arrChartData->toArray());
+
+        // Leads glamping
+        if (isset($_GET['search'])) $url = 'https://www.siravapark.com/api/glamping?search=' . $_GET['search'];
+        else $url = 'https://www.siravapark.com/api/glamping?page=' . ($_GET['page'] ?? 1);
+        $objResponse = $objGuzzle->request('GET', $url);
+        $arrLeads = json_decode($objResponse->getBody(), true);
+        $objPaginator = new LengthAwarePaginator($arrLeads['data'], $arrLeads['total'], 50);
+        $objPaginator->setPath('/admin/sirava');
+
+        return view('admin/sirava/glamping')->with([
+            'arrData' => $arrData,
+            'objPaginator' => $objPaginator,
+            'objChart' => $objChart
+        ]);
+    }
+
+
     public function holiday() {
 
         // Most visited pages
