@@ -113,6 +113,7 @@
                                     <td>{{ $lead['name'] }}</td>
                                     <td>{{ $lead['email'] }}</td>
                                     <td>{{ $lead['phone'] }}</td>
+                                    <td>{{ $lead['domes'] }}</td>
                                     <td>{{ $lead['estate'] }}</td>
                                     <td>{{ $lead['interested'] }}</td>
                                     <td>{{ $lead['buy_from'] }}</td>
