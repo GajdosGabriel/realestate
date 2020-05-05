@@ -187,7 +187,7 @@
 
 @include('includes/codes/google')
 
-@include('includes/codes/chat')
+{{--@include('includes/codes/chat')--}}
 
 @include('includes/codes/adroll')
 
