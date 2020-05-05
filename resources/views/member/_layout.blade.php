@@ -203,7 +203,7 @@
 
 @include('includes/codes/google')
 
-@include('includes/codes/chat')
+{{--@include('includes/codes/chat')--}}
 
 @if(! Auth::user()->hasAnyRole(['super admin']) )
     @include('includes/codes/smartlook')
