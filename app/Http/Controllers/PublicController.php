@@ -14,6 +14,7 @@ use App\Classes\Contracts\SPContract;
 use App\UserActivity;
 
 class PublicController extends Controller {
+
     public function index() {
         // Create roles cookie
         if (isset($_GET['roles'])) {
